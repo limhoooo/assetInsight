@@ -1,5 +1,6 @@
 'use client';
 
+import { KR, US } from 'country-flag-icons/react/3x2';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { Currency } from '@/types/calculator';
 

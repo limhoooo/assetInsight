@@ -2,12 +2,12 @@ export type Lang = 'ko' | 'en';
 
 const ko = {
   langSwitch: '🇺🇸 English',
-  themeDark: '🌙 다크', themeLight: '☀️ 라이트',
+  themeDark: '🌙 Dark', themeLight: '☀️ Light',
   title: '📉 물타기 계산기',
   subtitle: '주식 평균단가 계산 · 시뮬레이션 · 손익 분석',
   navGuide: '물타기 가이드', navFaq: 'FAQ', navAbout: '서비스 소개', navPrivacy: '개인정보처리방침',
 
-  currencyKrw: '🇰🇷 원화 (KRW)', currencyUsd: '🇺🇸 달러 (USD)',
+  currencyKrw: '원화 (KRW)', currencyUsd: '달러 (USD)',
 
   holdingTitle: '📋 현재 보유 현황', holdingTitleUsd: '📋 달러 보유 현황',
   avgBuyPriceKrw: '평균 매수가 (원)', avgBuyPriceUsd: '평균 매수가 (USD)',
@@ -99,7 +99,7 @@ const en: typeof ko = {
   subtitle: 'Stock Avg. Price · Simulation · P&L Analysis',
   navGuide: 'Guide', navFaq: 'FAQ', navAbout: 'About', navPrivacy: 'Privacy',
 
-  currencyKrw: '🇰🇷 KRW', currencyUsd: '🇺🇸 USD',
+  currencyKrw: 'KRW', currencyUsd: 'USD',
 
   holdingTitle: '📋 Current Holdings', holdingTitleUsd: '📋 USD Holdings',
   avgBuyPriceKrw: 'Avg. Buy Price (KRW)', avgBuyPriceUsd: 'Avg. Buy Price (USD)',
