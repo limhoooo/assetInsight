@@ -83,6 +83,31 @@ body {
 .header h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; position: relative; }
 .header p { font-size: 13px; opacity: 0.75; margin-top: 4px; position: relative; }
 
+.header-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  position: relative;
+}
+.header-nav-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.header-nav-link:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: white;
+}
+
 .theme-toggle {
   position: absolute;
   top: 16px;
@@ -422,6 +447,11 @@ tbody tr:last-child td { border-bottom: none; }
 }
 .btn-del:hover { color: var(--danger); border-color: var(--border-danger); background: var(--danger-light); }
 
+.portfolio-count { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+
+.sim-bottom-row { display: flex; gap: 8px; }
+.sim-bottom-row .btn { flex: 1; width: auto; }
+
 /* ── Footer ── */
 .footer {
   text-align: center;
@@ -455,6 +485,116 @@ tbody tr:last-child td { border-bottom: none; }
   margin-right: auto;
 }
 .footer-copy { font-size: 12px; color: var(--text-muted); opacity: 0.5; }
+
+/* ── Guide page ── */
+.guide-formula {
+  background: var(--primary-light);
+  border: 1px solid var(--border-accent);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--info-text);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.guide-warning-box {
+  background: var(--danger-light);
+  border: 1px solid var(--border-danger);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--danger);
+  line-height: 1.6;
+}
+
+/* ── FAQ page ── */
+.faq-list { display: flex; flex-direction: column; gap: 4px; }
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.faq-item[open] { border-color: var(--primary); }
+.faq-question {
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: '+';
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { transform: rotate(45deg); }
+.faq-answer {
+  padding: 0 16px 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* ── App Description (main page bottom) ── */
+.app-desc-section { margin-top: 4px; }
+.app-desc-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.app-desc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.app-desc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  background: var(--toggle-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.app-desc-icon { font-size: 20px; flex-shrink: 0; }
+.app-desc-label { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.app-desc-sub { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+.app-desc-footer {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+.app-desc-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+.app-desc-link:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .app-desc-grid { grid-template-columns: 1fr; }
+}
 
 /* ── About / Privacy pages ── */
 .back-link {

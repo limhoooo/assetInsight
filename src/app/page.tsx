@@ -6,6 +6,7 @@ import CurrencyToggle from '@/components/CurrencyToggle';
 import PortfolioCard from '@/components/PortfolioCard';
 import KrwCalculator from '@/components/krw/KrwCalculator';
 import UsdCalculator from '@/components/usd/UsdCalculator';
+import AppDescription from '@/components/AppDescription';
 import { usePortfolio } from '@/hooks/usePortfolio';
 import type { Currency, Round, SavedStock } from '@/types/calculator';
 
@@ -22,19 +23,11 @@ export default function Home() {
 
   const { stocks, save, remove } = usePortfolio();
 
-  const currentPrice = currency === 'krw' ? krwPrice : usdPrice;
-  const currentShares = currency === 'krw' ? krwShares : usdShares;
-  const currentRounds = currency === 'krw' ? krwRounds : usdRounds;
-  const canSave = parseFloat(currentPrice) > 0 && parseFloat(currentShares) > 0;
-
   const handleSave = (name: string) => {
-    save({
-      name,
-      currency,
-      initPrice: parseFloat(currentPrice) || 0,
-      initShares: parseFloat(currentShares) || 0,
-      rounds: currentRounds,
-    });
+    const price = currency === 'krw' ? krwPrice : usdPrice;
+    const shares = currency === 'krw' ? krwShares : usdShares;
+    const rounds = currency === 'krw' ? krwRounds : usdRounds;
+    save({ name, currency, initPrice: parseFloat(price) || 0, initShares: parseFloat(shares) || 0, rounds });
   };
 
   const handleLoad = (stock: SavedStock) => {
@@ -57,8 +50,6 @@ export default function Home() {
         <CurrencyToggle currency={currency} onChange={setCurrency} />
         <PortfolioCard
           stocks={stocks}
-          canSave={canSave}
-          onSave={handleSave}
           onLoad={handleLoad}
           onRemove={remove}
         />
@@ -70,6 +61,7 @@ export default function Home() {
             onInitPriceChange={setKrwPrice}
             onInitSharesChange={setKrwShares}
             onRoundsChange={setKrwRounds}
+            onSave={handleSave}
           />
         ) : (
           <UsdCalculator
@@ -79,8 +71,10 @@ export default function Home() {
             onInitPriceChange={setUsdPrice}
             onInitSharesChange={setUsdShares}
             onRoundsChange={setUsdRounds}
+            onSave={handleSave}
           />
         )}
+        <AppDescription />
       </main>
     </>
   );
