@@ -27,6 +27,10 @@
   --card-border: rgba(255, 255, 255, 0.8);
 }
 
+[data-theme='dark'] .header {
+  background: linear-gradient(135deg, #111827 0%, #1a3a6b 60%, #1e4da3 100%);
+}
+
 [data-theme='dark'] {
   --primary: #3b82f6;
   --primary-dark: #2563eb;
