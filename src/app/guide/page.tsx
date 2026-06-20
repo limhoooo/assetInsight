@@ -6,7 +6,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://avgdown-calculator
 export const metadata: Metadata = {
   title: '물타기란? 주식 평균단가 낮추기 완벽 가이드 | 물타기 계산기',
   description: '물타기(주식 평균단가 낮추기)의 개념, 평균단가 계산 방법, 장단점, 언제 해야 하는지 자세히 설명합니다. 물타기 계산기 활용법도 함께 안내합니다.',
-  keywords: ['물타기', '평균단가 낮추기', '주식 물타기 방법', '평균단가 계산', '물타기 전략', 'averaging down'],
+  keywords: ['물타기', '평균단가 낮추기', '주식 물타기 방법', '평균단가 계산', '물타기 전략', 'averaging down', '주식 평균단가 계산기', '평균단가 낮추기 계산', '미국주식 물타기', '달러 평균단가 계산', '삼성전자 물타기'],
   alternates: { canonical: `${BASE_URL}/guide` },
 };
 
@@ -35,7 +35,7 @@ export default function GuidePage() {
       <div className="card" style={{ marginTop: '16px' }}>
         <h1 style={{ fontSize: '22px', fontWeight: 800, marginBottom: '8px' }}>물타기란? 주식 평균단가 낮추기 완벽 가이드</h1>
         <p className="privacy-text" style={{ marginBottom: 0 }}>
-          주식 투자를 하다 보면 보유 종목이 하락해 손실을 보는 상황을 맞이합니다. 이때 많은 투자자들이 선택하는 전략 중 하나가 바로 <strong>물타기(평균단가 낮추기)</strong>입니다. 이 가이드에서는 물타기의 개념부터 계산 방법, 장단점, 실전 활용법까지 자세히 설명합니다.
+          주식 투자를 하다 보면 보유 종목이 하락해 손실을 보는 상황을 맞이합니다. 삼성전자, 카카오 등 국내 주식은 물론 미국주식(해외주식)에서도 흔히 겪는 상황입니다. 이때 많은 투자자들이 선택하는 전략 중 하나가 바로 <strong>물타기(평균단가 낮추기)</strong>입니다. 이 가이드에서는 물타기의 개념부터 <strong>평균단가 낮추기 계산</strong> 방법, 장단점, 실전 활용법까지 자세히 설명합니다. 빠른 계산이 필요하다면 <strong>주식 평균단가 계산기</strong>를 바로 사용해보세요.
         </p>
       </div>
 
@@ -175,6 +175,38 @@ export default function GuidePage() {
         </ul>
         <p className="privacy-text" style={{ marginTop: '14px', marginBottom: 0 }}>
           미국주식 투자자라면 상단의 KRW/USD 토글로 달러 모드로 전환하면 실시간 환율이 자동으로 적용되어 원화 기준 투자금과 손익도 함께 확인할 수 있습니다.
+        </p>
+      </div>
+
+      <div className="card">
+        <h2 className="privacy-section-title">8. 미국주식 물타기 및 달러 평균단가 계산</h2>
+        <p className="privacy-text">
+          미국주식(해외주식) 투자자도 동일한 물타기 전략을 활용할 수 있습니다. <strong>달러 평균단가 계산</strong> 공식은 원화와 동일합니다.
+        </p>
+        <div className="guide-formula">
+          달러 평균단가(USD) = 총 투자금액(USD) ÷ 총 보유 수량
+        </div>
+        <p className="privacy-text" style={{ marginTop: '14px' }}>
+          <strong>달러 평균단가 계산 예시</strong>
+        </p>
+        <ul className="privacy-list">
+          <li>1차 매수: $150 × 10주 = $1,500</li>
+          <li>2차 매수(미국주식 물타기): $120 × 10주 = $1,200</li>
+          <li>총 투자금: $2,700 / 총 수량: 20주</li>
+          <li><strong>달러 평균단가: $2,700 ÷ 20 = $135</strong></li>
+        </ul>
+        <p className="privacy-text">
+          미국주식 물타기 계산기는 상단의 <strong>KRW/USD 토글</strong>을 USD로 전환하면 사용할 수 있습니다.
+          실시간 환율을 자동으로 적용해 달러(USD)와 원화(KRW) 기준 손익을 동시에 확인할 수 있습니다.
+        </p>
+        <ul className="privacy-list">
+          <li>달러 기준 평균단가·손익 자동 계산</li>
+          <li>원화 환산 투자금·평가손익 동시 표시</li>
+          <li>실시간 환율 자동 조회 (수동 입력도 가능)</li>
+          <li>목표 달러 평균단가 역산 기능</li>
+        </ul>
+        <p className="privacy-text" style={{ marginBottom: 0 }}>
+          자세한 미국주식 물타기 계산 방법은 <Link href="/us-stocks" className="privacy-link">미국주식 물타기 계산기 가이드</Link>를 참고하세요.
         </p>
       </div>
 
