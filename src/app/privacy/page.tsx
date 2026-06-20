@@ -118,8 +118,7 @@ export default function PrivacyPage() {
         <h2 className="privacy-section-title">9. 문의</h2>
         <p className="privacy-text">
           개인정보 처리에 관한 문의사항이 있으시면 아래로 연락 주시기 바랍니다.<br />
-          {/* TODO: 실제 연락처 이메일로 교체하세요 */}
-          <strong>이메일: contact@yourdomain.com</strong>
+          <strong>이메일: dlagh123@gmail.com</strong>
         </p>
       </div>
     </main>

@@ -78,8 +78,7 @@ export default function AboutPage() {
         <div className="card-title">문의</div>
         <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.7' }}>
           서비스 이용 중 불편한 점이나 개선 사항이 있으시면 아래 이메일로 문의해 주세요.<br />
-          {/* TODO: 실제 연락처 이메일로 교체하세요 */}
-          <strong style={{ color: 'var(--text)' }}>이메일: contact@yourdomain.com</strong>
+          <strong style={{ color: 'var(--text)' }}>이메일: dlagh123@gmail.com</strong>
         </p>
       </div>
     </main>

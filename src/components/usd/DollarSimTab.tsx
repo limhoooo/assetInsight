@@ -59,6 +59,10 @@ export default function DollarSimTab({ initPrice, initShares, rounds, exchangeRa
     <div>
       <div className="card">
         <div className="card-title">➕ 추가 매수 (USD)</div>
+        <div className="form-group">
+          <label>입력 방식</label>
+          <ToggleGroup options={MODE_OPTIONS} value={inputMode} onChange={(v) => { setInputMode(v as InputMode); setAddAmount(''); }} />
+        </div>
         <div className="input-row">
           <div className="form-group">
             <label>추가 매수가 (USD)</label>
@@ -73,10 +77,6 @@ export default function DollarSimTab({ initPrice, initShares, rounds, exchangeRa
               onChange={(e) => setAddAmount(e.target.value)}
             />
           </div>
-        </div>
-        <div className="form-group">
-          <label>입력 방식</label>
-          <ToggleGroup options={MODE_OPTIONS} value={inputMode} onChange={(v) => { setInputMode(v as InputMode); setAddAmount(''); }} />
         </div>
         <button className="btn btn-primary" onClick={handleAdd}>+ 물타기 추가</button>
       </div>
