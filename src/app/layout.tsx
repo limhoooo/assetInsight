@@ -4,8 +4,8 @@ import './globals.css';
 import Footer from '@/components/Footer';
 import { ClientProviders } from '@/components/ClientProviders';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://yourdomain.com';
-const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? 'ca-pub-XXXXXXXXXX';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://avgdown-calculator.pages.dev';
+const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? 'ca-pub-3707407763414210';
 
 export const metadata: Metadata = {
   title: '물타기 계산기 - 주식 평균단가 계산기',
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     type: 'website', locale: 'ko_KR', url: BASE_URL, siteName: '물타기 계산기',
   },
   twitter: { card: 'summary', title: '물타기 계산기', description: '주식 물타기 시뮬레이션 · 평균단가 역산 · 손익 계산' },
+  alternates: { canonical: BASE_URL },
   robots: { index: true, follow: true },
   other: { 'google-adsense-account': ADSENSE_CLIENT },
 };

@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://avgdown-calculator.pages.dev';
+
 export const metadata: Metadata = {
   title: '자주 묻는 질문 (FAQ) | 물타기 계산기',
   description: '물타기 계산기 사용법, 평균단가 계산 방법, 달러 모드, 포트폴리오 저장 등 자주 묻는 질문에 대한 답변을 확인하세요.',
   keywords: ['물타기 계산기 사용법', '평균단가 계산', '물타기 FAQ', '주식 평균단가 질문'],
+  alternates: { canonical: `${BASE_URL}/faq` },
 };
 
 const FAQS = [
@@ -85,8 +88,25 @@ const FAQS = [
   },
 ];
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.flatMap((section) =>
+    section.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    }))
+  ),
+};
+
 export default function FaqPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <main className="container" style={{ paddingTop: '24px', paddingBottom: '40px' }}>
       <Link href="/" className="back-link">← 계산기로 돌아가기</Link>
 
@@ -118,5 +138,6 @@ export default function FaqPage() {
         </Link>
       </div>
     </main>
+    </>
   );
 }

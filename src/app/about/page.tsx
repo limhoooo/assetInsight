@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://avgdown-calculator.pages.dev';
+
 export const metadata: Metadata = {
   title: '서비스 소개 | 물타기 계산기',
   description: '물타기 계산기는 주식 평균단가를 낮추는 물타기 전략을 시뮬레이션하고, 목표 평균단가 달성에 필요한 추가 매수 수량을 역산하는 무료 계산 도구입니다.',
+  alternates: { canonical: `${BASE_URL}/about` },
 };
 
 export default function AboutPage() {

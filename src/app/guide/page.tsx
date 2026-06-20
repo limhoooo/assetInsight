@@ -1,14 +1,34 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://avgdown-calculator.pages.dev';
+
 export const metadata: Metadata = {
   title: '물타기란? 주식 평균단가 낮추기 완벽 가이드 | 물타기 계산기',
   description: '물타기(주식 평균단가 낮추기)의 개념, 평균단가 계산 방법, 장단점, 언제 해야 하는지 자세히 설명합니다. 물타기 계산기 활용법도 함께 안내합니다.',
   keywords: ['물타기', '평균단가 낮추기', '주식 물타기 방법', '평균단가 계산', '물타기 전략', 'averaging down'],
+  alternates: { canonical: `${BASE_URL}/guide` },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: '물타기란? 주식 평균단가 낮추기 완벽 가이드',
+  description: '물타기(주식 평균단가 낮추기)의 개념, 평균단가 계산 방법, 장단점, 언제 해야 하는지 자세히 설명합니다.',
+  url: `${BASE_URL}/guide`,
+  inLanguage: 'ko-KR',
+  author: { '@type': 'Organization', name: '물타기 계산기', url: BASE_URL },
+  publisher: { '@type': 'Organization', name: '물타기 계산기', url: BASE_URL },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE_URL}/guide` },
 };
 
 export default function GuidePage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <main className="container" style={{ paddingTop: '24px', paddingBottom: '40px' }}>
       <Link href="/" className="back-link">← 계산기로 돌아가기</Link>
 
@@ -173,5 +193,6 @@ export default function GuidePage() {
         </Link>
       </div>
     </main>
+    </>
   );
 }
