@@ -194,22 +194,27 @@ body {
   color: white;
 }
 
-.theme-toggle {
+.header-controls {
   position: absolute;
   top: 16px;
   right: 16px;
+  display: flex;
+  gap: 6px;
+  z-index: 1;
+}
+.theme-toggle, .lang-toggle {
   background: rgba(255, 255, 255, 0.15);
   border: 1.5px solid rgba(255, 255, 255, 0.25);
   border-radius: 50px;
-  padding: 6px 12px;
   color: white;
-  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
-  z-index: 1;
 }
-.theme-toggle:hover { background: rgba(255, 255, 255, 0.25); }
+.theme-toggle { padding: 6px 12px; font-size: 13px; }
+.lang-toggle  { padding: 6px 11px; font-size: 12px; display: flex; align-items: center; gap: 5px; }
+.theme-toggle:hover, .lang-toggle:hover { background: rgba(255, 255, 255, 0.25); }
+.flag-icon { width: 18px; height: 13px; border-radius: 2px; display: inline-block; flex-shrink: 0; }
 
 .container { max-width: 660px; margin: 0 auto; padding: 16px; }
 

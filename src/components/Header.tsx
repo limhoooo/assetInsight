@@ -1,14 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { KR, US } from 'country-flag-icons/react/3x2';
 import { useTheme } from '@/hooks/useTheme';
-
-const NAV_LINKS = [
-  { href: '/guide', label: '물타기 가이드' },
-  { href: '/faq', label: 'FAQ' },
-  { href: '/about', label: '서비스 소개' },
-  { href: '/privacy', label: '개인정보처리방침' },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const BUBBLES = [
   { left: '7%',  size: 7,  duration: 6.0, delay: 0.0 },
@@ -23,37 +18,42 @@ const BUBBLES = [
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
+  const { lang, setLang, t } = useLanguage();
+
+  const navLinks = [
+    { href: '/guide', label: t.navGuide },
+    { href: '/faq',   label: t.navFaq },
+    { href: '/about', label: t.navAbout },
+    { href: '/privacy', label: t.navPrivacy },
+  ];
 
   return (
     <header className="header">
-      {/* Water animation effects */}
       <div className="header-water" aria-hidden="true">
         <div className="hwave hwave-1" />
         <div className="hwave hwave-2" />
         <div className="hwave hwave-3" />
         {BUBBLES.map((b, i) => (
-          <span
-            key={i}
-            className="hbubble"
-            style={{
-              left: b.left,
-              width: b.size,
-              height: b.size,
-              animationDuration: `${b.duration}s`,
-              animationDelay: `${b.delay}s`,
-            }}
-          />
+          <span key={i} className="hbubble" style={{ left: b.left, width: b.size, height: b.size, animationDuration: `${b.duration}s`, animationDelay: `${b.delay}s` }} />
         ))}
         <div className="header-caustic" />
       </div>
 
-      <button className="theme-toggle" onClick={toggleTheme}>
-        {theme === 'dark' ? '☀️ 라이트' : '🌙 다크'}
-      </button>
-      <h1>📉 물타기 계산기</h1>
-      <p>주식 평균단가 계산 · 시뮬레이션 · 손익 분석</p>
+      <div className="header-controls">
+        <button className="lang-toggle" onClick={() => setLang(lang === 'ko' ? 'en' : 'ko')}>
+          {lang === 'ko'
+            ? <><US className="flag-icon" title="English" /> English</>
+            : <><KR className="flag-icon" title="한국어" /> Korea</>}
+        </button>
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {theme === 'dark' ? t.themeLight : t.themeDark}
+        </button>
+      </div>
+
+      <h1>{t.title}</h1>
+      <p>{t.subtitle}</p>
       <nav className="header-nav">
-        {NAV_LINKS.map(({ href, label }) => (
+        {navLinks.map(({ href, label }) => (
           <Link key={href} href={href} className="header-nav-link">{label}</Link>
         ))}
       </nav>

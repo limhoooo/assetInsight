@@ -4,40 +4,39 @@ import { useState } from 'react';
 import ToggleGroup from '@/components/ui/ToggleGroup';
 import { calcAvg } from '@/lib/calc';
 import { fmt, fmtUSD, fmtP } from '@/lib/fmt';
+import { useLanguage } from '@/contexts/LanguageContext';
 import type { Round, InputMode } from '@/types/calculator';
 
 interface Props {
-  initPrice: number;
-  initShares: number;
-  rounds: Round[];
-  exchangeRate: number;
-  onAdd: (r: Round) => void;
-  onRemove: (idx: number) => void;
-  onClear: () => void;
+  initPrice: number; initShares: number; rounds: Round[]; exchangeRate: number;
+  onAdd: (r: Round) => void; onRemove: (idx: number) => void;
+  onClear: () => void; onSave: (name: string) => void;
 }
 
-const MODE_OPTIONS = [
-  { value: 'shares', label: '수량으로 입력' },
-  { value: 'amount', label: '금액으로 입력 (USD)' },
-];
-
-export default function DollarSimTab({ initPrice, initShares, rounds, exchangeRate, onAdd, onRemove, onClear }: Props) {
-  const [addPrice, setAddPrice] = useState('');
+export default function DollarSimTab({ initPrice, initShares, rounds, exchangeRate, onAdd, onRemove, onClear, onSave }: Props) {
+  const { t } = useLanguage();
+  const [addPrice,  setAddPrice]  = useState('');
   const [addAmount, setAddAmount] = useState('');
   const [inputMode, setInputMode] = useState<InputMode>('shares');
+  const [saving,    setSaving]    = useState(false);
+  const [saveName,  setSaveName]  = useState('');
+
+  const MODE_OPTIONS = [
+    { value: 'shares', label: t.modeShares },
+    { value: 'amount', label: t.modeAmountUsd },
+  ];
 
   const hasInit = initPrice > 0 && initShares > 0;
 
   const handleAdd = () => {
     const price = parseFloat(addPrice);
-    const val = parseFloat(addAmount);
-    if (!price || price <= 0) { alert('추가 매수가를 입력하세요.'); return; }
-    if (!val || val <= 0) { alert(inputMode === 'shares' ? '추가 수량을 입력하세요.' : '추가 금액을 입력하세요.'); return; }
+    const val   = parseFloat(addAmount);
+    if (!price || price <= 0) { alert(t.alertPrice); return; }
+    if (!val   || val   <= 0) { alert(inputMode === 'shares' ? t.alertShares : t.alertAmount); return; }
     const shares = inputMode === 'shares' ? val : Math.floor(val / price);
-    if (shares <= 0) { alert('금액이 너무 작습니다.'); return; }
+    if (shares <= 0) { alert(t.alertTooSmall); return; }
     onAdd({ price, shares });
-    setAddPrice('');
-    setAddAmount('');
+    setAddPrice(''); setAddAmount('');
   };
 
   const all: Array<Round & { isInit: boolean }> = [];
@@ -48,7 +47,7 @@ export default function DollarSimTab({ initPrice, initShares, rounds, exchangeRa
   const rows = all.map((r, i) => {
     running = [...running, { price: r.price, shares: r.shares }];
     const { avg } = calcAvg(running);
-    const vsInit = hasInit && !r.isInit ? ((r.price - initPrice) / initPrice) * 100 : null;
+    const vsInit  = hasInit && !r.isInit ? ((r.price - initPrice) / initPrice) * 100 : null;
     return { ...r, avg, vsInit, roundIdx: hasInit ? i - 1 : i };
   });
 
@@ -58,38 +57,33 @@ export default function DollarSimTab({ initPrice, initShares, rounds, exchangeRa
   return (
     <div>
       <div className="card">
-        <div className="card-title">➕ 추가 매수 (USD)</div>
+        <div className="card-title">{t.addTitleUsd}</div>
         <div className="form-group">
-          <label>입력 방식</label>
+          <label>{t.inputMode}</label>
           <ToggleGroup options={MODE_OPTIONS} value={inputMode} onChange={(v) => { setInputMode(v as InputMode); setAddAmount(''); }} />
         </div>
         <div className="input-row">
           <div className="form-group">
-            <label>추가 매수가 (USD)</label>
+            <label>{t.addPriceUsd}</label>
             <input type="number" placeholder="130.00" step="0.01" value={addPrice} onChange={(e) => setAddPrice(e.target.value)} />
           </div>
           <div className="form-group">
-            <label>{inputMode === 'shares' ? '추가 수량 (주)' : '추가 금액 (USD)'}</label>
-            <input
-              type="number"
-              placeholder={inputMode === 'shares' ? '5' : '1000'}
-              value={addAmount}
-              onChange={(e) => setAddAmount(e.target.value)}
-            />
+            <label>{inputMode === 'shares' ? t.addSharesLabel : t.addAmtUsd}</label>
+            <input type="number" placeholder={inputMode === 'shares' ? '5' : '1000'} value={addAmount} onChange={(e) => setAddAmount(e.target.value)} />
           </div>
         </div>
-        <button className="btn btn-primary" onClick={handleAdd}>+ 물타기 추가</button>
+        <button className="btn btn-primary" onClick={handleAdd}>{t.addBtn}</button>
       </div>
 
       {finalCalc && (hasInit || rounds.length > 0) && (
         <div className="card">
-          <div className="card-title">📊 달러 물타기 결과</div>
+          <div className="card-title">{t.resultTitleUsd}</div>
           <div className="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>구분</th><th>매수가(USD)</th><th>수량</th>
-                  <th>투자금(USD)</th><th>투자금(KRW)</th><th>평균단가(USD)</th><th>단가대비</th><th></th>
+                  <th>{t.colType}</th><th>{t.colPriceUsd}</th><th>{t.colShares}</th>
+                  <th>{t.colAmtUsd}</th><th>{t.colAmtKrw}</th><th>{t.colAvgUsd}</th><th>{t.colVsInit}</th><th></th>
                 </tr>
               </thead>
               <tbody>
@@ -97,22 +91,16 @@ export default function DollarSimTab({ initPrice, initShares, rounds, exchangeRa
                   <tr key={i}>
                     <td>
                       {row.isInit
-                        ? <span className="badge badge-init">최초 매수</span>
-                        : <span className="badge badge-round">{row.roundIdx + 1}차 물타기</span>}
+                        ? <span className="badge badge-init">{t.badgeInit}</span>
+                        : <span className="badge badge-round">{t.badgeRoundBefore}{row.roundIdx + 1}{t.badgeRoundAfter}</span>}
                     </td>
                     <td>{fmtUSD(row.price)}</td>
                     <td>{fmt(row.shares)}주</td>
                     <td>{fmtUSD(row.price * row.shares)}</td>
                     <td>{krw(row.price * row.shares)}</td>
                     <td><strong>{fmtUSD(row.avg)}</strong></td>
-                    <td>
-                      {row.vsInit !== null
-                        ? <span style={{ color: row.vsInit < 0 ? 'var(--blue)' : 'var(--danger)' }}>{fmtP(row.vsInit, 1)}</span>
-                        : '-'}
-                    </td>
-                    <td>
-                      {!row.isInit && <button className="btn-sm" onClick={() => onRemove(row.roundIdx)}>삭제</button>}
-                    </td>
+                    <td>{row.vsInit !== null ? <span style={{ color: row.vsInit < 0 ? 'var(--blue)' : 'var(--danger)' }}>{fmtP(row.vsInit, 1)}</span> : '-'}</td>
+                    <td>{!row.isInit && <button className="btn-sm" onClick={() => onRemove(row.roundIdx)}>{t.deleteBtn}</button>}</td>
                   </tr>
                 ))}
               </tbody>
@@ -121,42 +109,56 @@ export default function DollarSimTab({ initPrice, initShares, rounds, exchangeRa
           <div className="divider" />
           <div className="result-grid">
             <div className="result-item accent">
-              <div className="result-label">최종 평균단가 (USD)</div>
+              <div className="result-label">{t.finalAvgUsd}</div>
               <div className="result-value xl">{fmtUSD(finalCalc.avg)}</div>
             </div>
             <div className="result-item accent">
-              <div className="result-label">최종 평균단가 (KRW)</div>
+              <div className="result-label">{t.finalAvgKrw}</div>
               <div className="result-value">{krw(finalCalc.avg)}</div>
             </div>
             <div className="result-item">
-              <div className="result-label">총 보유 수량</div>
+              <div className="result-label">{t.totalShares}</div>
               <div className="result-value">{fmt(finalCalc.totalShares)}주</div>
             </div>
             <div className="result-item">
-              <div className="result-label">평균단가 변화</div>
+              <div className="result-label">{t.avgChange}</div>
               {hasInit && rounds.length > 0 ? (() => {
                 const diff = finalCalc.avg - initPrice;
-                return (
-                  <>
-                    <div className={`result-value ${diff > 0 ? 'up' : 'down'}`}>
-                      {(diff > 0 ? '+' : '') + fmtUSD(diff)}
-                    </div>
-                    <div className="result-sub">{fmtP((diff / initPrice) * 100, 2)}</div>
-                  </>
-                );
+                return (<><div className={`result-value ${diff > 0 ? 'up' : 'down'}`}>{(diff > 0 ? '+' : '') + fmtUSD(diff)}</div><div className="result-sub">{fmtP((diff / initPrice) * 100, 2)}</div></>);
               })() : <div className="result-value">-</div>}
             </div>
             <div className="result-item">
-              <div className="result-label">총 투자금액 (USD)</div>
+              <div className="result-label">{t.totalAmtUsd}</div>
               <div className="result-value">{fmtUSD(finalCalc.totalAmt)}</div>
             </div>
             <div className="result-item">
-              <div className="result-label">총 투자금액 (KRW)</div>
+              <div className="result-label">{t.totalAmtKrw}</div>
               <div className="result-value">{krw(finalCalc.totalAmt)}</div>
             </div>
           </div>
           <div className="divider" />
-          <button className="btn btn-ghost" onClick={onClear}>전체 초기화</button>
+          {saving ? (
+            <div className="portfolio-save-form">
+              <input type="text" className="portfolio-name-input" placeholder={t.saveNameUsd}
+                value={saveName} onChange={(e) => setSaveName(e.target.value)} autoFocus maxLength={20}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && saveName.trim()) { onSave(saveName.trim()); setSaving(false); setSaveName(''); }
+                  if (e.key === 'Escape') { setSaving(false); setSaveName(''); }
+                }} />
+              <div className="portfolio-save-actions">
+                <button className="btn btn-primary" style={{ flex: 1, padding: '9px', fontSize: '14px' }}
+                  onClick={() => { if (saveName.trim()) { onSave(saveName.trim()); setSaving(false); setSaveName(''); } }}
+                  disabled={!saveName.trim()}>{t.saveBtnLabel}</button>
+                <button className="btn btn-ghost" style={{ flex: 1, padding: '9px', fontSize: '14px' }}
+                  onClick={() => { setSaving(false); setSaveName(''); }}>{t.cancelBtnLabel}</button>
+              </div>
+            </div>
+          ) : (
+            <div className="sim-bottom-row">
+              <button className="btn btn-ghost" onClick={onClear}>{t.resetAll}</button>
+              <button className="btn btn-portfolio-save" onClick={() => setSaving(true)}>{t.saveStock}</button>
+            </div>
+          )}
         </div>
       )}
     </div>
