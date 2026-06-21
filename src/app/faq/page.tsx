@@ -91,6 +91,27 @@ const FAQS = [
     ],
   },
   {
+    category: '취득세 계산기',
+    items: [
+      {
+        q: '취득세는 언제 납부해야 하나요?',
+        a: '취득세는 부동산 취득일(잔금 지급일 또는 등기일 중 빠른 날)로부터 60일 이내에 관할 시·군·구청에 신고·납부해야 합니다. 기한을 초과하면 무신고 가산세 20%와 납부지연 가산세가 추가로 부과됩니다.',
+      },
+      {
+        q: '1주택자 취득세율은 어떻게 되나요?',
+        a: '1세대 1주택 기준으로 취득가액 6억원 이하는 1%, 6억원 초과~9억원 이하는 1~3%(선형 보간), 9억원 초과는 3%가 적용됩니다. 여기에 지방교육세(취득세×10%)가 추가되며, 전용면적 85㎡ 초과 시 농어촌특별세(취득가액×0.2%)도 부과됩니다.',
+      },
+      {
+        q: '다주택자 취득세는 얼마인가요?',
+        a: '조정대상지역 내 2주택 취득 시 8%, 3주택 이상은 12%가 적용됩니다. 비조정지역의 경우 2주택은 기본세율(1~3%), 3주택은 8%, 4주택 이상은 12%입니다. 다주택 중과 시 농어촌특별세(취득가액×0.6%)도 함께 부과됩니다.',
+      },
+      {
+        q: '취득세 감면을 받을 수 있는 경우는?',
+        a: '생애최초 주택 구입자는 12억원 이하 주택에 대해 취득세 200만원 한도 감면 혜택을 받을 수 있습니다(2025년 기준). 신혼부부, 농지 자경농민 등도 별도 감면 요건이 있으며, 세법 개정에 따라 매년 변경될 수 있으므로 위택스(wetax.go.kr)에서 최신 내용을 확인하세요.',
+      },
+    ],
+  },
+  {
     category: '해외주식 양도소득세 계산기',
     items: [
       {
@@ -201,6 +222,7 @@ export default function FaqPage() {
         <Link href="/avgdown/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>물타기 완벽 가이드 보기 →</Link>
         <Link href="/stock-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>해외주식 양도소득세 가이드 보기 →</Link>
         <Link href="/realestate-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>부동산 양도소득세 가이드 보기 →</Link>
+        <Link href="/acquisition-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>취득세 가이드 보기 →</Link>
       </div>
     </main>
     </>

@@ -48,6 +48,18 @@ const CALCULATORS = [
       { icon: '📐', title: '누진세율 자동 적용', desc: '단기세율(1·2년 미만), 미등기, 일반 누진세율 자동 산출' },
     ],
   },
+  {
+    emoji: '🏡',
+    name: '취득세 계산기',
+    href: '/acquisition-tax',
+    guideHref: '/acquisition-tax/guide',
+    desc: '부동산 취득 시 납부해야 하는 취득세를 자동으로 계산합니다. 주택 수, 조정대상지역 여부, 전용면적에 따른 세율을 자동 적용합니다.',
+    features: [
+      { icon: '🏘️', title: '주택 수별 세율 적용', desc: '1~4주택+ 구분, 조정·비조정지역 여부에 따른 세율 자동 적용 (최대 12%)' },
+      { icon: '📐', title: '전용면적 반영', desc: '85㎡ 이하(국민주택) 농어촌특별세 비과세 자동 처리' },
+      { icon: '🧾', title: '부가세 자동 계산', desc: '지방교육세(취득세×10%), 농어촌특별세 포함 총 납부세액 산출' },
+    ],
+  },
 ];
 
 export default function AboutPage() {

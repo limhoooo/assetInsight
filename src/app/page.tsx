@@ -44,6 +44,14 @@ const CALCULATORS = [
     href: '/realestate-tax',
     ready: true,
   },
+  {
+    emoji: '🏡',
+    name: '취득세 계산기',
+    nameEn: 'Acquisition Tax',
+    desc: '부동산 취득 시 취득세 계산. 주택 수·조정지역·전용면적에 따른 세율 자동 적용',
+    href: '/acquisition-tax',
+    ready: true,
+  },
 ];
 
 const FINANCE_FLOATS = [
