@@ -49,6 +49,18 @@ const CALCULATORS = [
     ],
   },
   {
+    emoji: '🏦',
+    name: '대출 이자 계산기',
+    href: '/loan',
+    guideHref: '/loan/guide',
+    desc: '대출금액·금리·기간을 입력하면 상환방식별 월 납입금과 총 이자를 자동으로 계산합니다. 연도별 원금·이자·잔여 원금 상환 스케줄도 자동 생성됩니다.',
+    features: [
+      { icon: '💳', title: '3가지 상환방식 지원', desc: '원리금균등·원금균등·만기일시 선택 후 즉시 계산' },
+      { icon: '📅', title: '연도별 상환 스케줄', desc: '매년 납입 원금·이자·잔여 원금 자동 생성' },
+      { icon: '📊', title: '상환방식 비교', desc: '총 이자 부담 차이를 한눈에 파악' },
+    ],
+  },
+  {
     emoji: '📊',
     name: '복리 계산기',
     href: '/compound',

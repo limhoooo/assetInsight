@@ -91,6 +91,27 @@ const FAQS = [
     ],
   },
   {
+    category: '대출 이자 계산기',
+    items: [
+      {
+        q: '원리금균등상환과 원금균등상환의 차이는 무엇인가요?',
+        a: '원리금균등상환은 매월 동일한 금액(원금+이자)을 납입합니다. 원금균등상환은 매월 동일한 원금을 납입하고 이자는 남은 잔액에 따라 계산되어 초기에 납입금이 많고 점차 줄어듭니다. 총 이자 부담은 원금균등 < 원리금균등 < 만기일시 순으로 많습니다.',
+      },
+      {
+        q: '같은 금리라면 어떤 상환방식이 총 이자가 가장 적게 나오나요?',
+        a: '원금균등상환이 총 이자가 가장 적습니다. 원금이 빠르게 줄어들기 때문에 이자 계산 기준(잔여 원금)도 빨리 줄어들기 때문입니다. 단, 초기 납입금 부담이 크다는 단점이 있습니다.',
+      },
+      {
+        q: '만기일시상환(거치식)은 언제 유리한가요?',
+        a: '단기적으로 자금이 필요하고 만기에 목돈이 생길 예정인 경우(부동산 매각, 보험 만기 등)에 활용합니다. 월 납입 부담은 가장 낮지만 총 이자는 가장 많이 냅니다.',
+      },
+      {
+        q: '대출 기간은 어떻게 입력해야 하나요?',
+        a: '개월 수로 입력합니다. 1년 = 12개월, 5년 = 60개월, 10년 = 120개월, 30년 = 360개월입니다. 주택담보대출은 보통 10~30년(120~360개월)이며, 신용대출은 1~5년(12~60개월)이 일반적입니다.',
+      },
+    ],
+  },
+  {
     category: '복리 계산기',
     items: [
       {
@@ -264,6 +285,7 @@ export default function FaqPage() {
         <Link href="/avgdown/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>물타기 완벽 가이드 보기 →</Link>
         <Link href="/stock-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>해외주식 양도소득세 가이드 보기 →</Link>
         <Link href="/realestate-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>부동산 양도소득세 가이드 보기 →</Link>
+        <Link href="/loan/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>대출 이자 계산기 가이드 보기 →</Link>
         <Link href="/compound/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>복리 계산기 가이드 보기 →</Link>
         <Link href="/savings/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>정기예금/적금 가이드 보기 →</Link>
         <Link href="/acquisition-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>취득세 가이드 보기 →</Link>

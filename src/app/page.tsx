@@ -45,6 +45,14 @@ const CALCULATORS = [
     ready: true,
   },
   {
+    emoji: '🏦',
+    name: '대출 이자 계산기',
+    nameEn: 'Loan Interest',
+    desc: '원리금균등·원금균등·만기일시 월 납입금 계산 · 연도별 상환 스케줄 자동 생성',
+    href: '/loan',
+    ready: true,
+  },
+  {
     emoji: '📊',
     name: '복리 계산기',
     nameEn: 'Compound Interest',
