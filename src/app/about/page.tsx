@@ -49,6 +49,18 @@ const CALCULATORS = [
     ],
   },
   {
+    emoji: '🏦',
+    name: '정기예금/적금 계산기',
+    href: '/savings',
+    guideHref: '/savings/guide',
+    desc: '정기예금과 정기적금의 세전·세후 이자를 자동으로 계산합니다. 이자소득세, 세금우대, 비과세 옵션을 지원하며 단리·월복리를 선택할 수 있습니다.',
+    features: [
+      { icon: '💰', title: '정기예금 계산', desc: '원금·금리·기간 입력 시 단리·복리 이자 즉시 계산' },
+      { icon: '📅', title: '정기적금 계산', desc: '월 납입금 기준 만기 수령액 자동 계산 (단리)' },
+      { icon: '🧾', title: '이자소득세 자동 처리', desc: '일반과세(15.4%)·세금우대(9.5%)·비과세 선택 후 세후 이자 즉시 확인' },
+    ],
+  },
+  {
     emoji: '🏡',
     name: '취득세 계산기',
     href: '/acquisition-tax',

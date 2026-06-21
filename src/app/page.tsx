@@ -45,6 +45,14 @@ const CALCULATORS = [
     ready: true,
   },
   {
+    emoji: '🏦',
+    name: '정기예금/적금 계산기',
+    nameEn: 'Deposit / Savings',
+    desc: '정기예금·적금 세후 이자 계산. 이자소득세 · 단리·복리 · 비과세 자동 적용',
+    href: '/savings',
+    ready: true,
+  },
+  {
     emoji: '🏡',
     name: '취득세 계산기',
     nameEn: 'Acquisition Tax',

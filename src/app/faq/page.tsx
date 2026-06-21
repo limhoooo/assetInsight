@@ -91,6 +91,27 @@ const FAQS = [
     ],
   },
   {
+    category: '정기예금/적금 계산기',
+    items: [
+      {
+        q: '정기예금과 정기적금의 이자 계산 방식이 다른가요?',
+        a: '네, 다릅니다. 정기예금은 목돈 전체에 대해 전체 기간 이자가 붙습니다. 정기적금은 매월 납입하기 때문에 첫 달 납입금은 n개월, 마지막 달 납입금은 1개월 동안만 이자가 적용되어 평균 잔존기간이 절반 수준입니다. 같은 금리라도 정기예금의 실질 이자가 더 높습니다.',
+      },
+      {
+        q: '이자소득세는 얼마나 떼나요?',
+        a: '일반과세 기준 이자의 15.4%(소득세 14% + 지방소득세 1.4%)가 원천징수됩니다. 새마을금고·신용협동조합 등 일부 금융기관의 상품은 9.5% 세금우대가 적용될 수 있으며, 청년도약계좌 등 특정 상품은 비과세 혜택이 있습니다.',
+      },
+      {
+        q: '단리와 복리의 차이는 무엇인가요?',
+        a: '단리는 원금에만 이자가 붙는 방식이고, 복리는 이자에도 이자가 붙는 방식입니다. 단기(1년 이하)에서는 차이가 크지 않지만, 장기로 갈수록 복리의 효과가 커집니다. 국내 정기예금은 대부분 단리 방식이며, 일부 상품은 월복리를 제공합니다.',
+      },
+      {
+        q: '예금자 보호는 얼마까지 되나요?',
+        a: '예금자보호법에 따라 은행·저축은행 등 금융기관별로 1인당 원금과 이자를 합산해 최대 5,000만원까지 보호됩니다. 5,000만원 이상의 목돈은 여러 금융기관에 분산 예치하는 것이 안전합니다.',
+      },
+    ],
+  },
+  {
     category: '취득세 계산기',
     items: [
       {
@@ -222,6 +243,7 @@ export default function FaqPage() {
         <Link href="/avgdown/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>물타기 완벽 가이드 보기 →</Link>
         <Link href="/stock-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>해외주식 양도소득세 가이드 보기 →</Link>
         <Link href="/realestate-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>부동산 양도소득세 가이드 보기 →</Link>
+        <Link href="/savings/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>정기예금/적금 가이드 보기 →</Link>
         <Link href="/acquisition-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>취득세 가이드 보기 →</Link>
       </div>
     </main>
