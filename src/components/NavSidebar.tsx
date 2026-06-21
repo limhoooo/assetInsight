@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -18,14 +18,22 @@ const CALCULATORS = [
 export default function NavSidebar() {
   const [open, setOpen] = useState(false);
   const [calcOpen, setCalcOpen] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const close = () => setOpen(false);
 
   return (
     <>
       <button
-        className="nav-toggle"
+        className={`nav-toggle${scrolled ? ' nav-toggle-scrolled' : ''}`}
         onClick={() => setOpen(true)}
         aria-label="메뉴 열기"
       >
