@@ -932,26 +932,142 @@ tbody tr:last-child td { border-bottom: none; }
 }
 .app-desc-link:hover { text-decoration: underline; }
 
-@media (max-width: 480px) {
-  .app-desc-grid { grid-template-columns: 1fr; }
-}
+/* ══════════════════════════════════════════════
+   Responsive Design
+   ══════════════════════════════════════════════ */
 
-/* ── Responsive ── */
+/* ── 600px: 태블릿·대형 모바일 ── */
 @media (max-width: 600px) {
+  /* 헤더 배너 */
   .header { padding-top: 66px; }
   .header h1 { font-size: 22px; }
+
+  /* 허브 홈 */
+  .hub-header { padding: 40px 16px 36px; }
+  .hub-title  { font-size: 28px; letter-spacing: -0.5px; }
+  .hub-subtitle { font-size: 13px; }
+  .hub-card { padding: 14px 16px; gap: 12px; }
+  .hub-card-emoji { font-size: 26px; }
+  .hub-card-name { font-size: 15px; }
+
+  /* 결과 카드 */
+  .result-value    { font-size: 18px; }
+  .result-value.xl { font-size: 22px; }
 }
 
-@media (max-width: 400px) {
-  .header { padding-top: 72px; padding-left: 12px; padding-right: 12px; }
-  .header h1 { font-size: 19px; }
-  .header p  { font-size: 12px; }
-  .header-controls { right: 10px; gap: 4px; }
-  .theme-toggle { padding: 5px 9px; font-size: 11px; }
-  .lang-toggle  { padding: 5px 8px; font-size: 11px; }
-  .header-nav { gap: 4px; margin-top: 10px; }
-  .header-nav-link { font-size: 11px; padding: 4px 9px; }
+/* ── 480px: 일반 모바일 ── */
+@media (max-width: 480px) {
+  /* 컨테이너·카드 */
+  .container { padding: 12px; }
+  .card { padding: 14px 16px; margin-bottom: 10px; }
+
+  /* 레이아웃 그리드 */
+  .input-row  { grid-template-columns: 1fr; }
+  .result-grid { grid-template-columns: 1fr; }
+  .app-desc-grid { grid-template-columns: 1fr; }
+
+  /* 탭 */
+  .tab { font-size: 12px; padding: 9px 4px; }
+
+  /* 토글 버튼 */
+  .toggle-btn { font-size: 12px; padding: 8px 6px; }
+
+  /* 결과 값 */
+  .result-value    { font-size: 16px; }
+  .result-value.xl { font-size: 20px; }
+  .result-label { font-size: 10px; }
+  .result-item { padding: 11px 12px; }
+
+  /* 세금 계산기 결과 */
+  .tax-row { padding: 9px 12px; gap: 8px; }
+  .tax-label { font-size: 12px; }
+  .tax-value { font-size: 13px; }
+  .tax-row-sub .tax-label { font-size: 11px; }
+  .tax-row-sub .tax-value { font-size: 12px; }
+  .tax-row-total .tax-label { font-size: 13px; }
+  .tax-row-total .tax-value { font-size: 14px; }
+  .tax-notice { font-size: 12px; }
+  .tax-disclaimer { font-size: 11px; }
+
+  /* 테이블 */
+  table { min-width: 420px; font-size: 12px; }
+  th { font-size: 10px; padding: 8px 8px; }
+  td { font-size: 12px; padding: 8px 8px; }
+  .sim-table th, .sim-table td { font-size: 11px; padding: 7px 6px; }
+
+  /* 가이드·Privacy 텍스트 */
+  .privacy-section-title { font-size: 14px; }
+  .privacy-text { font-size: 13px; }
+  .privacy-list li { font-size: 13px; }
+  .guide-formula { font-size: 13px; padding: 11px 14px; }
+  .guide-warning-box { font-size: 12px; }
+  .disclaimer-box p { font-size: 12px; }
+
+  /* FAQ */
+  .faq-question { font-size: 13px; padding: 12px 14px; }
+  .faq-answer   { font-size: 12px; }
+
+  /* Back link */
+  .back-link { font-size: 12px; margin-bottom: 12px; }
+
+  /* 푸터 */
+  .footer { padding: 20px 14px 24px; }
+  .footer-link { font-size: 12px; }
+  .footer-disclaimer { font-size: 10px; }
+  .footer-copy { font-size: 11px; }
+
+  /* 기타 */
+  .card-title { font-size: 11px; margin-bottom: 12px; }
+  .empty-text { font-size: 13px; }
+  .info-box { font-size: 12px; }
+  .hub-section-title { font-size: 12px; }
+}
+
+/* ── 360px: 소형 모바일 ── */
+@media (max-width: 360px) {
+  /* 컨테이너·카드 */
   .container { padding: 10px; }
+  .card { padding: 12px 12px; }
+
+  /* 헤더 배너 */
+  .header { padding-top: 72px; padding-left: 10px; padding-right: 10px; }
+  .header h1 { font-size: 19px; }
+  .header p  { font-size: 11px; }
+  .header-home { left: 8px; font-size: 11px; padding: 5px 9px; }
+  .header-controls { right: 8px; gap: 3px; }
+  .theme-toggle { padding: 5px 8px; font-size: 11px; }
+  .lang-toggle  { padding: 5px 7px; font-size: 11px; }
+  .header-nav { gap: 3px; margin-top: 8px; }
+  .header-nav-link { font-size: 10px; padding: 4px 7px; }
+
+  /* 허브 홈 */
+  .hub-header { padding: 36px 12px 32px; }
+  .hub-title  { font-size: 24px; }
+  .hub-card   { padding: 12px; gap: 10px; }
+  .hub-card-emoji { font-size: 22px; }
+  .hub-card-name  { font-size: 14px; }
+  .hub-card-desc  { font-size: 12px; }
+  .hub-card-arrow { font-size: 15px; }
+
+  /* 버튼·토글 */
+  .toggle-btn { font-size: 11px; padding: 7px 4px; }
+  .toggle-group { flex-wrap: wrap; }
+  .btn { font-size: 14px; padding: 11px; }
+
+  /* 결과 값 */
+  .result-value    { font-size: 15px; }
+  .result-value.xl { font-size: 18px; }
+
+  /* 세금 결과 */
+  .tax-row { padding: 8px 10px; }
+  .tax-label { font-size: 11px; }
+  .tax-value { font-size: 12px; }
+  .tax-row-total .tax-value { font-size: 13px; }
+
+  /* 기타 */
+  label { font-size: 11px; }
+  .privacy-text { font-size: 12px; }
+  .privacy-list li { font-size: 12px; }
 }
 
 /* ── About / Privacy pages ── */
@@ -1036,13 +1152,3 @@ tbody tr:last-child td { border-bottom: none; }
   margin: 0;
 }
 
-@media (max-width: 480px) {
-  .input-row { grid-template-columns: 1fr; }
-  .result-grid { grid-template-columns: 1fr; }
-  .tab { font-size: 12px; padding: 9px 4px; }
-  /* 테이블 글자 축소 */
-  .sim-table th,
-  .sim-table td { font-size: 11px; padding: 7px 6px; }
-  /* 토글 버튼 */
-  .toggle-btn { font-size: 13px; }
-}
