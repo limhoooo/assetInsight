@@ -91,6 +91,27 @@ const FAQS = [
     ],
   },
   {
+    category: '보유세 계산기',
+    items: [
+      {
+        q: '보유세는 어떻게 구성되나요?',
+        a: '보유세는 재산세와 종합부동산세(종부세)로 구성됩니다. 재산세는 모든 부동산 보유자가 납부하며, 종부세는 공시가격이 일정 기준(1세대1주택 12억, 일반 9억)을 초과하는 경우에만 추가로 부과됩니다. 재산세는 공시가격의 60%인 과세표준에 누진세율을 적용해 계산합니다.',
+      },
+      {
+        q: '종합부동산세(종부세)는 누가 내나요?',
+        a: '1세대 1주택은 공시가격 12억원 초과 시, 다주택자·법인 등 일반은 공시가격 합산 9억원 초과 시 종부세를 납부합니다. 종부세는 공제액을 뺀 나머지 금액의 60%를 과세표준으로 하여 0.5~2.7%의 누진세율을 적용합니다.',
+      },
+      {
+        q: '6월 1일 기준이 왜 중요한가요?',
+        a: '재산세와 종부세는 매년 6월 1일 기준 소유자에게 부과됩니다. 따라서 6월 1일 이전에 부동산을 매도하면 해당 연도 보유세를 납부하지 않아도 됩니다. 반대로 6월 1일 이후에 취득하면 그해 보유세는 매도자가 납부합니다.',
+      },
+      {
+        q: '재산세는 언제 납부하나요?',
+        a: '주택 재산세는 연 2회로 나눠 납부합니다. 7월에 50%, 9월에 나머지 50%를 납부합니다. 종합부동산세는 12월에 납부합니다. 납부 고지서는 납부 전월에 발송됩니다.',
+      },
+    ],
+  },
+  {
     category: '대출 이자 계산기',
     items: [
       {
@@ -285,6 +306,7 @@ export default function FaqPage() {
         <Link href="/avgdown/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>물타기 완벽 가이드 보기 →</Link>
         <Link href="/stock-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>해외주식 양도소득세 가이드 보기 →</Link>
         <Link href="/realestate-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>부동산 양도소득세 가이드 보기 →</Link>
+        <Link href="/holding-tax/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>보유세 가이드 보기 →</Link>
         <Link href="/loan/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>대출 이자 계산기 가이드 보기 →</Link>
         <Link href="/compound/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>복리 계산기 가이드 보기 →</Link>
         <Link href="/savings/guide" className="privacy-link" style={{ fontSize: '14px', fontWeight: 600 }}>정기예금/적금 가이드 보기 →</Link>

@@ -45,6 +45,14 @@ const CALCULATORS = [
     ready: true,
   },
   {
+    emoji: '🏘️',
+    name: '보유세 계산기',
+    nameEn: 'Property Holding Tax',
+    desc: '재산세 + 종합부동산세(종부세) 자동 계산. 공시가격 입력 시 총 보유세 즉시 산출',
+    href: '/holding-tax',
+    ready: true,
+  },
+  {
     emoji: '🏦',
     name: '대출 이자 계산기',
     nameEn: 'Loan Interest',
