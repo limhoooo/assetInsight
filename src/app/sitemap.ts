@@ -143,6 +143,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${BASE_URL}/articles/tsmc-investment-analysis/`,
+      lastModified: new Date('2026-06-24'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
       url: `${BASE_URL}/privacy`,
       lastModified: new Date(),
       changeFrequency: 'yearly',

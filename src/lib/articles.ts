@@ -137,6 +137,15 @@ export const ARTICLES: Article[] = [
     keywords: ['배당주 투자', '배당수익률', '배당성향', '국내 고배당주', '배당소득세', '배당주 절세', '배당 ETF', '배당 재투자', '배당주 선별 기준', '고배당 ETF'],
     relatedCalc: { label: '평단가 낮추기 계산기', href: '/avgdown' },
   },
+  {
+    slug: 'tsmc-investment-analysis',
+    title: 'TSMC 완전 분석: 세계 1위 파운드리의 경쟁력과 투자 포인트',
+    description: 'TSMC 파운드리 사업 모델, AI 반도체 CoWoS 패키징 독점, 지정학 리스크, 삼성전자와의 비교까지 투자 판단에 필요한 핵심 정보를 정리합니다.',
+    category: '반도체',
+    publishedAt: '2026-06-24',
+    keywords: ['TSMC 주식', 'TSM ADR', 'TSMC 파운드리', 'TSMC 투자', 'TSMC CoWoS', 'TSMC 지정학 리스크', 'TSMC 애플', 'TSMC 엔비디아', 'TSMC 삼성 비교', '파운드리 반도체'],
+    relatedCalc: { label: '미국 주식 수익률 계산기', href: '/us-stocks' },
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {

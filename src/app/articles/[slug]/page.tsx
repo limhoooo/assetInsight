@@ -16,6 +16,7 @@ import SemiconductorEtfGuide from './content/SemiconductorEtfGuide';
 import PensionIrpTaxDeduction from './content/PensionIrpTaxDeduction';
 import IsaAccountGuide from './content/IsaAccountGuide';
 import DividendStockInvestment from './content/DividendStockInvestment';
+import TsmcInvestmentAnalysis from './content/TsmcInvestmentAnalysis';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://assetsinsight.net';
 
@@ -70,6 +71,7 @@ const CONTENT_MAP: Record<string, React.ReactNode> = {
   'pension-irp-tax-deduction': <PensionIrpTaxDeduction />,
   'isa-account-guide': <IsaAccountGuide />,
   'dividend-stock-investment': <DividendStockInvestment />,
+  'tsmc-investment-analysis': <TsmcInvestmentAnalysis />,
 };
 
 export default async function ArticlePage({
