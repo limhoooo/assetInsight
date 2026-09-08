@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AcquisitionTaxClient from '@/components/tax/AcquisitionTaxClient';
+import CalcContent, { calcFaqJsonLd } from '@/components/CalcContent';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://assetsinsight.net';
 
@@ -32,7 +33,13 @@ export default function AcquisitionTaxPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <AcquisitionTaxClient />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(calcFaqJsonLd('acquisition-tax')) }}
+      />
+      <AcquisitionTaxClient>
+        <CalcContent calcKey="acquisition-tax" />
+      </AcquisitionTaxClient>
     </>
   );
 }

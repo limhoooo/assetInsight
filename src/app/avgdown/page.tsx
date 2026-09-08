@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import HomeClient from '@/components/HomeClient';
+import CalcContent, { calcFaqJsonLd } from '@/components/CalcContent';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://assetsinsight.net';
 
@@ -31,7 +32,13 @@ export default function AvgDownPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HomeClient />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(calcFaqJsonLd('avgdown')) }}
+      />
+      <HomeClient>
+        <CalcContent calcKey="avgdown" />
+      </HomeClient>
     </>
   );
 }

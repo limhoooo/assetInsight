@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import LoanTab from './LoanTab';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function LoanClient() {
+export default function LoanClient({ children }: { children?: React.ReactNode }) {
   const { t } = useLanguage();
 
   const navLinks = [
@@ -21,6 +21,7 @@ export default function LoanClient() {
       <main className="container">
         <Link href="/" className="back-link">← 홈으로</Link>
         <LoanTab />
+        {children}
       </main>
     </>
   );

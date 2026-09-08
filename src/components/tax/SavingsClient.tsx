@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import SavingsTab from './SavingsTab';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function SavingsClient() {
+export default function SavingsClient({ children }: { children?: React.ReactNode }) {
   const { t } = useLanguage();
 
   const navLinks = [
@@ -21,6 +21,7 @@ export default function SavingsClient() {
       <main className="container">
         <Link href="/" className="back-link">← 홈으로</Link>
         <SavingsTab />
+        {children}
       </main>
     </>
   );

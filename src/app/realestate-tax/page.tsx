@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import RealEstateTaxClient from '@/components/tax/RealEstateTaxClient';
+import CalcContent, { calcFaqJsonLd } from '@/components/CalcContent';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://assetsinsight.net';
 
@@ -35,7 +36,13 @@ export default function RealEstateTaxPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <RealEstateTaxClient />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(calcFaqJsonLd('realestate-tax')) }}
+      />
+      <RealEstateTaxClient>
+        <CalcContent calcKey="realestate-tax" />
+      </RealEstateTaxClient>
     </>
   );
 }

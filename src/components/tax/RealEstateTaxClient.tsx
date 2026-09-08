@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import RealEstateTaxTab from './RealEstateTaxTab';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function RealEstateTaxClient() {
+export default function RealEstateTaxClient({ children }: { children?: React.ReactNode }) {
   const { t } = useLanguage();
 
   const navLinks = [
@@ -21,6 +21,7 @@ export default function RealEstateTaxClient() {
       <main className="container">
         <Link href="/" className="back-link">← 홈으로</Link>
         <RealEstateTaxTab />
+        {children}
       </main>
     </>
   );

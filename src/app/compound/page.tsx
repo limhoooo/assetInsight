@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import CompoundClient from '@/components/tax/CompoundClient';
+import CalcContent, { calcFaqJsonLd } from '@/components/CalcContent';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://assetsinsight.net';
 
@@ -32,7 +33,13 @@ export default function CompoundPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <CompoundClient />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(calcFaqJsonLd('compound')) }}
+      />
+      <CompoundClient>
+        <CalcContent calcKey="compound" />
+      </CompoundClient>
     </>
   );
 }

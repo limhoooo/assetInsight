@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SavingsClient from '@/components/tax/SavingsClient';
+import CalcContent, { calcFaqJsonLd } from '@/components/CalcContent';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://assetsinsight.net';
 
@@ -32,7 +33,13 @@ export default function SavingsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <SavingsClient />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(calcFaqJsonLd('savings')) }}
+      />
+      <SavingsClient>
+        <CalcContent calcKey="savings" />
+      </SavingsClient>
     </>
   );
 }

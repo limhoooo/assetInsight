@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import HoldingTaxClient from '@/components/tax/HoldingTaxClient';
+import CalcContent, { calcFaqJsonLd } from '@/components/CalcContent';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://assetsinsight.net';
 
@@ -32,7 +33,13 @@ export default function HoldingTaxPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <HoldingTaxClient />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(calcFaqJsonLd('holding-tax')) }}
+      />
+      <HoldingTaxClient>
+        <CalcContent calcKey="holding-tax" />
+      </HoldingTaxClient>
     </>
   );
 }

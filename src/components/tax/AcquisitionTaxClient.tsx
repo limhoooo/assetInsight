@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import AcquisitionTaxTab from './AcquisitionTaxTab';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function AcquisitionTaxClient() {
+export default function AcquisitionTaxClient({ children }: { children?: React.ReactNode }) {
   const { t } = useLanguage();
 
   const navLinks = [
@@ -21,6 +21,7 @@ export default function AcquisitionTaxClient() {
       <main className="container">
         <Link href="/" className="back-link">← 홈으로</Link>
         <AcquisitionTaxTab />
+        {children}
       </main>
     </>
   );

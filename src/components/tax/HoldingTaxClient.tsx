@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import HoldingTaxTab from './HoldingTaxTab';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function HoldingTaxClient() {
+export default function HoldingTaxClient({ children }: { children?: React.ReactNode }) {
   const { t } = useLanguage();
 
   const navLinks = [
@@ -21,6 +21,7 @@ export default function HoldingTaxClient() {
       <main className="container">
         <Link href="/" className="back-link">← 홈으로</Link>
         <HoldingTaxTab />
+        {children}
       </main>
     </>
   );

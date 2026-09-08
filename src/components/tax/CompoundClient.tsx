@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import CompoundTab from './CompoundTab';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function CompoundClient() {
+export default function CompoundClient({ children }: { children?: React.ReactNode }) {
   const { t } = useLanguage();
 
   const navLinks = [
@@ -21,6 +21,7 @@ export default function CompoundClient() {
       <main className="container">
         <Link href="/" className="back-link">← 홈으로</Link>
         <CompoundTab />
+        {children}
       </main>
     </>
   );

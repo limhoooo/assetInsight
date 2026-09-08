@@ -12,7 +12,7 @@ import { usePortfolio } from '@/hooks/usePortfolio';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { Currency, Round, SavedStock } from '@/types/calculator';
 
-export default function HomeClient() {
+export default function HomeClient({ children }: { children?: React.ReactNode }) {
   const { t } = useLanguage();
   const [currency, setCurrency] = useState<Currency>('krw');
 
@@ -86,6 +86,7 @@ export default function HomeClient() {
           />
         )}
         <AppDescription />
+        {children}
       </main>
     </>
   );

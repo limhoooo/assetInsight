@@ -1453,3 +1453,25 @@ tbody tr:last-child td { border-bottom: none; }
   border-color: var(--primary);
 }
 
+
+/* ── Calculator page long-form content ── */
+.calc-content { margin-top: 8px; }
+.calc-content-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.calc-content .guide-formula { white-space: pre-line; line-height: 1.9; }
+.calc-content-caption {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 10px 0 0;
+}
+.calc-content .privacy-text + .privacy-text { margin-top: 12px; }
+@media (max-width: 640px) {
+  .calc-content-title { font-size: 17px; }
+  .calc-content-caption { font-size: 11px; }
+}

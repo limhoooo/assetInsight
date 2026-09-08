@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import StockTaxTab from './StockTaxTab';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function StockTaxClient() {
+export default function StockTaxClient({ children }: { children?: React.ReactNode }) {
   const { t } = useLanguage();
 
   const navLinks = [
@@ -21,6 +21,7 @@ export default function StockTaxClient() {
       <main className="container">
         <Link href="/" className="back-link">← 홈으로</Link>
         <StockTaxTab />
+        {children}
       </main>
     </>
   );
