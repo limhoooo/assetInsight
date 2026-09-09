@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: '자주 묻는 질문 (FAQ) | 자산인사이트',
   description: '자산인사이트 계산기 사용법 FAQ. 물타기 계산기, 해외주식 양도소득세 계산기, 부동산 양도소득세 계산기에 대한 자주 묻는 질문을 확인하세요.',
   keywords: ['물타기 계산기 사용법', '해외주식 양도소득세 FAQ', '부동산 양도소득세 FAQ', '평균단가 계산', '주식 평균단가 질문', '삼성전자 물타기', '미국주식 물타기', '달러 평균단가 계산'],
-  alternates: { canonical: `${BASE_URL}/faq` },
+  alternates: { canonical: `${BASE_URL}/faq/` },
 };
 
 const FAQS = [

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: '물타기란? 주식 평균단가 낮추기 완벽 가이드 | 자산인사이트',
   description: '물타기(주식 평균단가 낮추기)의 개념, 평균단가 계산 방법, 장단점, 언제 해야 하는지 자세히 설명합니다. 물타기 계산기 활용법도 함께 안내합니다.',
   keywords: ['물타기', '평균단가 낮추기', '주식 물타기 방법', '평균단가 계산', '물타기 전략', 'averaging down', '주식 평균단가 계산기', '평균단가 낮추기 계산', '미국주식 물타기', '달러 평균단가 계산', '삼성전자 물타기'],
-  alternates: { canonical: `${BASE_URL}/avgdown/guide` },
+  alternates: { canonical: `${BASE_URL}/avgdown/guide/` },
 };
 
 const jsonLd = {

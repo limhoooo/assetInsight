@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: '보유세 완벽 가이드 - 재산세·종부세 계산 방법 | 자산인사이트',
   description: '재산세와 종합부동산세(종부세) 계산 방법, 공시가격 기준, 납부 일정, 1세대1주택 종부세 공제 12억까지 완벽 정리합니다.',
   keywords: ['재산세 계산 방법', '종합부동산세 계산', '종부세 기준', '공시가격 재산세', '1세대1주택 종부세 공제', '보유세 납부 일정'],
-  alternates: { canonical: `${BASE_URL}/holding-tax/guide` },
+  alternates: { canonical: `${BASE_URL}/holding-tax/guide/` },
 };
 
 const jsonLd = {

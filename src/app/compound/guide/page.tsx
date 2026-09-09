@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: '복리 계산기 가이드 - 복리 원리·공식·72법칙 | 자산인사이트',
   description: '복리의 원리와 계산 공식, 단리와의 차이, 72법칙, 복리 주기별 효과까지 완벽 정리. 장기 투자에서 복리가 왜 강력한지 알아보세요.',
   keywords: ['복리 원리', '복리 계산 공식', '단리 복리 차이', '72법칙', '복리 투자', '복리 효과', '연복리 월복리 차이'],
-  alternates: { canonical: `${BASE_URL}/compound/guide` },
+  alternates: { canonical: `${BASE_URL}/compound/guide/` },
 };
 
 const jsonLd = {

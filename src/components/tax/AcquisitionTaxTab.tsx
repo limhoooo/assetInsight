@@ -36,11 +36,20 @@ function calcTax(price: number, propType: PropType, homes: Homes, isAdjusted: bo
     taxRate = getBasicHousingRate(price);
   }
 
-  const tax   = price * taxRate;
-  const edu   = tax * 0.1;
-  const rural = taxRate >= 0.08
-    ? price * 0.006
-    : isOver85 ? price * 0.002 : 0;
+  const tax = price * taxRate;
+
+  // 지방교육세는 중과세율에 연동되지 않는다.
+  // 표준세율(1~3%) 구간은 취득세액의 10%, 8%·12% 중과 구간은 과세표준의 0.4% 고정.
+  const edu = taxRate >= 0.08 ? price * 0.004 : tax * 0.1;
+
+  // 농어촌특별세: 전용 85㎡ 이하 국민주택규모는 중과 구간에서도 비과세.
+  // 과세 대상일 때 세율은 취득세 구간에 따라 표준 0.2% / 8% 중과 0.6% / 12% 중과 1.0%.
+  let rural = 0;
+  if (isOver85) {
+    if (taxRate >= 0.12) rural = price * 0.01;
+    else if (taxRate >= 0.08) rural = price * 0.006;
+    else rural = price * 0.002;
+  }
 
   return { taxRate, tax, edu, rural, total: tax + edu + rural };
 }

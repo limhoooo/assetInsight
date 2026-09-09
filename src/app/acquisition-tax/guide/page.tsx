@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: '취득세 완벽 가이드 - 세율·계산 방법·다주택 중과 | 자산인사이트',
   description: '부동산 취득세 세율 체계, 계산 방법, 다주택자 중과세율, 지방교육세·농어촌특별세까지 완벽 정리. 아파트·토지·상가 취득세 총정리.',
   keywords: ['취득세 계산 방법', '취득세율', '다주택자 취득세', '취득세 지방교육세', '아파트 취득세 계산', '취득세 가이드'],
-  alternates: { canonical: `${BASE_URL}/acquisition-tax/guide` },
+  alternates: { canonical: `${BASE_URL}/acquisition-tax/guide/` },
 };
 
 const jsonLd = {

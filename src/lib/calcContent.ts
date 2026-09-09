@@ -126,6 +126,7 @@ export const CALC_CONTENT: Record<string, CalcContent> = {
     related: [
       { label: '물타기 전략 완벽 가이드', href: '/avgdown/guide' },
       { label: '삼성전자 주식 분석 아티클', href: '/articles/samsung-electronics-stock-analysis' },
+      { label: '반도체 밸류체인 완전 정리', href: '/articles/semiconductor-value-chain' },
       { label: '해외주식 양도소득세 계산기', href: '/stock-tax' },
       { label: '자주 묻는 질문(FAQ)', href: '/faq' },
     ],
@@ -227,6 +228,7 @@ export const CALC_CONTENT: Record<string, CalcContent> = {
     related: [
       { label: '해외주식 양도소득세 가이드', href: '/stock-tax/guide' },
       { label: '해외주식 양도소득세 신고 방법 아티클', href: '/articles/overseas-stock-tax-guide' },
+      { label: '미국주식 배당소득세 완전 정리', href: '/articles/us-dividend-tax-guide' },
       { label: 'ISA 계좌 절세 활용법', href: '/articles/isa-account-guide' },
       { label: '물타기 계산기', href: '/avgdown' },
     ],
@@ -294,9 +296,9 @@ export const CALC_CONTENT: Record<string, CalcContent> = {
             ['양도소득금액', '310,800,000원'],
             ['기본공제', '-2,500,000원'],
             ['과세표준', '308,300,000원'],
-            ['양도소득세 (누진세율)', '약 89,500,000원'],
-            ['지방소득세 (10%)', '약 8,950,000원'],
-            ['총 납부세액', '약 98,450,000원'],
+            ['양도소득세 (40% 구간, 누진공제 2,594만)', '97,380,000원'],
+            ['지방소득세 (10%)', '9,738,000원'],
+            ['총 납부세액', '107,118,000원'],
           ],
           caption: '누진세율과 누진공제를 적용한 개산액입니다. 실제 세액은 취득 시기·지역·주택 수에 따라 달라집니다.',
         },
@@ -477,8 +479,9 @@ export const CALC_CONTENT: Record<string, CalcContent> = {
         heading: '함께 붙는 부가세목',
         formula: '총 납부세액 = 취득세 + 지방교육세 + 농어촌특별세',
         bullets: [
-          '지방교육세: 취득세율에 연동되며 표준세율 구간에서는 취득세액의 10% 수준입니다.',
-          '농어촌특별세: 전용면적 85제곱미터를 초과하는 주택에만 부과됩니다. 85제곱미터 이하 국민주택 규모는 비과세입니다.',
+          '지방교육세: 표준세율(1~3%) 구간에서는 취득세액의 10%입니다. 8%·12% 중과 구간에서는 중과세율에 연동되지 않고 과세표준의 0.4%로 고정됩니다.',
+          '농어촌특별세: 전용면적 85제곱미터를 초과하는 주택에만 부과됩니다. 85제곱미터 이하 국민주택 규모는 중과 구간에서도 비과세입니다.',
+          '농어촌특별세율은 취득세 구간에 따라 다릅니다. 표준세율 0.2%, 8% 중과 0.6%, 12% 중과 1.0%입니다.',
           '따라서 같은 가격이어도 전용 84제곱미터와 전용 101제곱미터의 총 납부액이 달라집니다.',
         ],
       },
@@ -549,6 +552,7 @@ export const CALC_CONTENT: Record<string, CalcContent> = {
     ],
     related: [
       { label: '취득세 계산기 가이드', href: '/acquisition-tax/guide' },
+      { label: '취득세율 완전 정리 아티클', href: '/articles/acquisition-tax-rate-guide' },
       { label: '부동산 세금 완전 정리 아티클', href: '/articles/realestate-tax-checklist' },
       { label: '보유세 계산기', href: '/holding-tax' },
       { label: '부동산 양도소득세 계산기', href: '/realestate-tax' },
@@ -652,6 +656,7 @@ export const CALC_CONTENT: Record<string, CalcContent> = {
     related: [
       { label: '대출 이자 계산기 가이드', href: '/loan/guide' },
       { label: '원리금균등 vs 원금균등 비교 아티클', href: '/articles/loan-repayment-comparison' },
+      { label: 'DSR 완전 정리: 대출 한도가 막히는 이유', href: '/articles/dsr-loan-limit-guide' },
       { label: '복리 계산기', href: '/compound' },
       { label: '취득세 계산기', href: '/acquisition-tax' },
     ],
@@ -757,6 +762,7 @@ export const CALC_CONTENT: Record<string, CalcContent> = {
     related: [
       { label: '복리 계산기 가이드', href: '/compound/guide' },
       { label: '72법칙으로 보는 복리의 힘 아티클', href: '/articles/compound-interest-72-rule' },
+      { label: '지수추종 ETF 적립식 투자', href: '/articles/index-etf-investing-guide' },
       { label: '연금저축 IRP 세액공제 가이드', href: '/articles/pension-irp-tax-deduction' },
       { label: '정기예금/적금 계산기', href: '/savings' },
     ],
@@ -853,6 +859,7 @@ export const CALC_CONTENT: Record<string, CalcContent> = {
     related: [
       { label: '정기예금/적금 계산기 가이드', href: '/savings/guide' },
       { label: '정기예금 vs 적금 비교 아티클', href: '/articles/savings-vs-deposit' },
+      { label: '파킹통장 · CMA · MMF 비교', href: '/articles/parking-account-cma-guide' },
       { label: 'ISA 계좌 완전 분석 아티클', href: '/articles/isa-account-guide' },
       { label: '복리 계산기', href: '/compound' },
     ],

@@ -17,6 +17,12 @@ import PensionIrpTaxDeduction from './content/PensionIrpTaxDeduction';
 import IsaAccountGuide from './content/IsaAccountGuide';
 import DividendStockInvestment from './content/DividendStockInvestment';
 import TsmcInvestmentAnalysis from './content/TsmcInvestmentAnalysis';
+import DsrLoanLimitGuide from './content/DsrLoanLimitGuide';
+import AcquisitionTaxRateGuide from './content/AcquisitionTaxRateGuide';
+import UsDividendTaxGuide from './content/UsDividendTaxGuide';
+import ParkingAccountCmaGuide from './content/ParkingAccountCmaGuide';
+import IndexEtfInvestingGuide from './content/IndexEtfInvestingGuide';
+import SemiconductorValueChain from './content/SemiconductorValueChain';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://assetsinsight.net';
 
@@ -36,7 +42,7 @@ export async function generateMetadata({
     title: `${article.title} | 자산인사이트`,
     description: article.description,
     keywords: article.keywords,
-    alternates: { canonical: `${BASE_URL}/articles/${slug}` },
+    alternates: { canonical: `${BASE_URL}/articles/${slug}/` },
     openGraph: {
       title: article.title,
       description: article.description,
@@ -72,6 +78,12 @@ const CONTENT_MAP: Record<string, React.ReactNode> = {
   'isa-account-guide': <IsaAccountGuide />,
   'dividend-stock-investment': <DividendStockInvestment />,
   'tsmc-investment-analysis': <TsmcInvestmentAnalysis />,
+  'dsr-loan-limit-guide': <DsrLoanLimitGuide />,
+  'acquisition-tax-rate-guide': <AcquisitionTaxRateGuide />,
+  'us-dividend-tax-guide': <UsDividendTaxGuide />,
+  'parking-account-cma-guide': <ParkingAccountCmaGuide />,
+  'index-etf-investing-guide': <IndexEtfInvestingGuide />,
+  'semiconductor-value-chain': <SemiconductorValueChain />,
 };
 
 export default async function ArticlePage({

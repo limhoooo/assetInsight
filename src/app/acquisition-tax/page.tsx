@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: '취득세 계산기 - 부동산 취득세 자동 계산 | 자산인사이트',
   description: '부동산 취득 시 취득세를 무료로 계산하세요. 1~3주택 세율 자동 적용, 지방교육세·농어촌특별세 포함 총 세액 즉시 산출. 아파트·토지·상가 모두 지원.',
   keywords: ['취득세 계산기', '부동산 취득세', '취득세 계산', '주택 취득세', '아파트 취득세', '취득세율', '다주택자 취득세', '취득세 지방교육세'],
-  alternates: { canonical: `${BASE_URL}/acquisition-tax` },
+  alternates: { canonical: `${BASE_URL}/acquisition-tax/` },
   openGraph: {
     title: '취득세 계산기 | 자산인사이트',
     description: '부동산 취득세 무료 계산. 주택 수·조정지역 여부에 따른 세율 자동 적용.',

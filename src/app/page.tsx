@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: '자산인사이트 - 투자자를 위한 스마트 계산기 모음',
   description: '물타기 계산기, 양도소득세 계산기 등 투자에 필요한 계산을 한 곳에서. 자산인사이트에서 스마트하게 투자하세요.',
   keywords: ['자산인사이트', '투자 계산기', '물타기 계산기', '양도소득세 계산기', '주식 계산기'],
-  alternates: { canonical: BASE_URL },
+  alternates: { canonical: `${BASE_URL}/` },
 };
 
 const jsonLd = {

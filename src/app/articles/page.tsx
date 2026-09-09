@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: '투자·금융 가이드 아티클 | 자산인사이트',
   description: '대출 상환 방식 비교, 복리 투자 원리, 부동산 세금 정리 등 투자자에게 꼭 필요한 금융 정보를 알기 쉽게 설명합니다.',
   keywords: ['투자 가이드', '금융 정보', '대출 상환', '복리 투자', '부동산 세금', '재테크'],
-  alternates: { canonical: `${BASE_URL}/articles` },
+  alternates: { canonical: `${BASE_URL}/articles/` },
 };
 
 const navLinks = [

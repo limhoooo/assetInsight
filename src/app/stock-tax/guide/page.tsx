@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: '해외주식 양도소득세 완벽 가이드 - 계산 방법·신고 기한 | 자산인사이트',
   description: '해외주식(미국주식) 양도소득세 계산 방법, 기본공제 250만원 적용, 22% 세율, 손익 통산, 신고 기한(5월)까지 한눈에 정리합니다. 계산기로 바로 확인하세요.',
   keywords: ['해외주식 양도소득세 계산', '미국주식 양도세 계산 방법', '해외주식 양도세 신고', '해외주식 세금 신고 기한', '해외주식 손익 통산', '미국주식 세금 계산기'],
-  alternates: { canonical: `${BASE_URL}/stock-tax/guide` },
+  alternates: { canonical: `${BASE_URL}/stock-tax/guide/` },
 };
 
 const jsonLd = {

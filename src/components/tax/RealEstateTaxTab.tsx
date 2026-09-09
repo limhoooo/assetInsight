@@ -66,19 +66,19 @@ export default function RealEstateTaxTab() {
       return { kind: 'flat' as const, gain, taxBase, rate: '70% (미등기)', tax, local, total: tax + local };
     }
 
-    if (houseType !== 'land') {
-      if (hold < 1) {
-        const taxBase = Math.max(0, gain - BASIC_DEDUCTION);
-        const tax     = taxBase * 0.70;
-        const local   = tax * 0.10;
-        return { kind: 'flat' as const, gain, taxBase, rate: '70% (1년 미만)', tax, local, total: tax + local };
-      }
-      if (hold < 2) {
-        const taxBase = Math.max(0, gain - BASIC_DEDUCTION);
-        const tax     = taxBase * 0.60;
-        const local   = tax * 0.10;
-        return { kind: 'flat' as const, gain, taxBase, rate: '60% (2년 미만)', tax, local, total: tax + local };
-      }
+    // 단기 보유 세율. 주택·조합원입주권은 70%/60%, 토지 등 그 외 부동산은 50%/40%.
+    if (hold < 2) {
+      const isHousing = houseType !== 'land';
+      const shortRate = hold < 1
+        ? (isHousing ? 0.70 : 0.50)
+        : (isHousing ? 0.60 : 0.40);
+      const label = hold < 1
+        ? `${shortRate * 100}% (1년 미만)`
+        : `${shortRate * 100}% (2년 미만)`;
+      const taxBase = Math.max(0, gain - BASIC_DEDUCTION);
+      const tax     = taxBase * shortRate;
+      const local   = tax * 0.10;
+      return { kind: 'flat' as const, gain, taxBase, rate: label, tax, local, total: tax + local };
     }
 
     if (houseType === 'one') {
@@ -89,8 +89,10 @@ export default function RealEstateTaxTab() {
       if (holdOk && sell > NON_TAXABLE_LIMIT) {
         const taxableRatio = (sell - NON_TAXABLE_LIMIT) / sell;
         const taxableGain  = gain * taxableRatio;
-        const holdRate     = Math.min(Math.floor(hold)  * 0.04, 0.40);
-        const residRate    = Math.min(Math.floor(resid) * 0.04, 0.40);
+        // 1세대1주택 장기보유특별공제(표2): 보유는 3년 이상부터 연 4%,
+        // 거주는 2년 이상부터 적용(2년 8%, 3년 이상 연 4%). 각각 최대 40%.
+        const holdRate  = hold  >= 3 ? Math.min(Math.floor(hold)  * 0.04, 0.40) : 0;
+        const residRate = resid >= 2 ? Math.min(Math.floor(resid) * 0.04, 0.40) : 0;
         const deductRate   = Math.min(holdRate + residRate, 0.80);
         const afterDeduct  = taxableGain * (1 - deductRate);
         const taxBase      = Math.max(0, afterDeduct - BASIC_DEDUCTION);

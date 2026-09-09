@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: '부동산 양도소득세 완벽 가이드 - 비과세·장기보유공제·세율 | 자산인사이트',
   description: '부동산 양도소득세 계산 방법, 1세대1주택 비과세(12억), 장기보유특별공제(최대 80%), 단기세율, 누진세율 체계까지 완벽 정리합니다.',
   keywords: ['부동산 양도소득세 계산 방법', '1세대1주택 비과세 요건', '장기보유특별공제 계산', '부동산 양도세 세율', '아파트 양도소득세 계산', '부동산 세금 가이드'],
-  alternates: { canonical: `${BASE_URL}/realestate-tax/guide` },
+  alternates: { canonical: `${BASE_URL}/realestate-tax/guide/` },
 };
 
 const jsonLd = {

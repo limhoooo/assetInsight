@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: '대출 이자 계산기 가이드 - 상환방식 비교·총 이자 차이 | 자산인사이트',
   description: '원리금균등·원금균등·만기일시 상환방식 비교, 대출 이자 계산 방법, 각 방식의 장단점과 총 이자 차이까지 완벽 정리합니다.',
   keywords: ['원리금균등상환', '원금균등상환', '만기일시상환', '대출 이자 계산 방법', '대출 상환방식 비교', '주택담보대출 이자 계산'],
-  alternates: { canonical: `${BASE_URL}/loan/guide` },
+  alternates: { canonical: `${BASE_URL}/loan/guide/` },
 };
 
 const jsonLd = {

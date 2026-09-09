@@ -14,9 +14,13 @@ function calcFuture(principal: number, monthly: number, rate: number, years: num
   const n  = FREQS[freq];
   const r  = rate / 100 / n;
   const t  = n * years;
+  // 선택한 복리 주기가 만드는 실효 연이율을 월 이율로 환산해
+  // 초기 투자금과 월 적립금이 같은 기준으로 불어나게 한다.
+  const effAnnual = Math.pow(1 + r, n) - 1;
+  const rMonthly  = Math.pow(1 + effAnnual, 1 / 12) - 1;
   const fvPrincipal = principal * Math.pow(1 + r, t);
   const fvMonthly   = monthly > 0
-    ? monthly * (Math.pow(1 + rate / 100 / 12, 12 * years) - 1) / (rate / 100 / 12)
+    ? monthly * (Math.pow(1 + rMonthly, 12 * years) - 1) / rMonthly
     : 0;
   const total       = fvPrincipal + fvMonthly;
   const totalInvested = principal + monthly * 12 * years;
@@ -28,7 +32,7 @@ function calcFuture(principal: number, monthly: number, rate: number, years: num
     const ty = n * y;
     const fvP = principal * Math.pow(1 + r, ty);
     const fvM = monthly > 0
-      ? monthly * (Math.pow(1 + rate / 100 / 12, 12 * y) - 1) / (rate / 100 / 12)
+      ? monthly * (Math.pow(1 + rMonthly, 12 * y) - 1) / rMonthly
       : 0;
     breakdown.push({ year: y, amount: fvP + fvM });
   }

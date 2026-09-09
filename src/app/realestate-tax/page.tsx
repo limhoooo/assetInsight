@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: '부동산 양도소득세 계산기 - 아파트·토지 양도세 계산 | 자산인사이트',
   description: '부동산 양도소득세를 무료로 계산하세요. 1세대1주택 비과세(12억), 장기보유특별공제(최대 80%), 단기세율(1·2년 미만), 누진세율 자동 적용. 아파트·토지·건물 모두 지원.',
   keywords: ['부동산 양도소득세', '양도세 계산기', '아파트 양도소득세', '부동산 양도세 계산', '장기보유특별공제', '1세대1주택 비과세', '양도소득세 누진세율', '부동산 세금 계산기'],
-  alternates: { canonical: `${BASE_URL}/realestate-tax` },
+  alternates: { canonical: `${BASE_URL}/realestate-tax/` },
   openGraph: {
     title: '부동산 양도소득세 계산기 | 자산인사이트',
     description: '부동산 양도소득세 무료 계산. 1세대1주택 비과세 · 장기보유특별공제 · 누진세율 자동 적용.',

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website', locale: 'ko_KR', url: BASE_URL, siteName: '자산인사이트',
   },
   twitter: { card: 'summary', title: '자산인사이트', description: '물타기 계산기, 양도소득세 계산기 등 투자 계산기 모음' },
-  alternates: { canonical: BASE_URL },
+  alternates: { canonical: `${BASE_URL}/` },
   verification: { google: ['VO0T_4Yb3qD2RrVEM0qN_5OTMHHAkOXi_z8nhmz7qn4', 'SG3eDjq8t8SeacZliY6Lpq2CUcuPpb-r6UtsXzhYZlU'] },
   robots: { index: true, follow: true },
   other: { 'google-adsense-account': ADSENSE_CLIENT },

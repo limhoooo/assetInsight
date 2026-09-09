@@ -6,7 +6,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://assetsinsight.net'
 export const metadata: Metadata = {
   title: '개인정보처리방침 | 자산인사이트',
   description: '자산인사이트의 개인정보처리방침입니다. 쿠키 사용, Google AdSense 광고 서비스 및 개인정보 처리에 관한 내용을 확인하세요.',
-  alternates: { canonical: `${BASE_URL}/privacy` },
+  alternates: { canonical: `${BASE_URL}/privacy/` },
 };
 
 export default function PrivacyPage() {

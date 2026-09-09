@@ -6,7 +6,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://assetsinsight.net'
 export const metadata: Metadata = {
   title: '서비스 소개 | 자산인사이트',
   description: '자산인사이트는 투자자를 위한 무료 계산기 모음 서비스입니다. 물타기 계산기, 해외주식 양도소득세 계산기, 부동산 양도소득세 계산기를 제공합니다.',
-  alternates: { canonical: `${BASE_URL}/about` },
+  alternates: { canonical: `${BASE_URL}/about/` },
 };
 
 // 새 계산기 추가 시 이 배열에만 추가하면 됩니다
@@ -164,8 +164,14 @@ export default function AboutPage() {
       <div className="card">
         <div className="card-title">문의</div>
         <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.7' }}>
-          서비스 이용 중 불편한 점이나 개선 사항이 있으시면 아래 이메일로 문의해 주세요.<br />
+          계산 결과 오류 제보, 세법 개정 알림, 기능 제안은 언제든 환영합니다.<br />
           <strong style={{ color: 'var(--text)' }}>이메일: dlagh123@gmail.com</strong>
+        </p>
+        <p className="privacy-text" style={{ marginTop: '12px', marginBottom: 0 }}>
+          어떤 내용을 보내면 좋은지는 <Link href="/contact/" className="privacy-link">문의하기</Link> 페이지에
+          정리해 두었습니다. 서비스 이용 조건은 <Link href="/terms/" className="privacy-link">이용약관</Link>,
+          개인정보 처리 방식은 <Link href="/privacy/" className="privacy-link">개인정보처리방침</Link>을
+          확인해 주세요.
         </p>
       </div>
     </main>

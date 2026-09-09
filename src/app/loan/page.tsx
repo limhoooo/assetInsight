@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: '대출 이자 계산기 - 원리금균등·원금균등·만기일시 | 자산인사이트',
   description: '대출 이자 계산기. 원리금균등상환·원금균등상환·만기일시상환 세 가지 방식의 월 납입금, 총 이자, 연도별 상환 스케줄을 무료로 계산하세요.',
   keywords: ['대출 이자 계산기', '원리금균등상환 계산', '원금균등상환 계산', '대출 이자 계산', '주택담보대출 이자', '대출 상환 스케줄', '월 납입금 계산기'],
-  alternates: { canonical: `${BASE_URL}/loan` },
+  alternates: { canonical: `${BASE_URL}/loan/` },
   openGraph: {
     title: '대출 이자 계산기 | 자산인사이트',
     description: '원리금균등·원금균등·만기일시 대출 이자 계산. 연도별 상환 스케줄 자동 생성.',

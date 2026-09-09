@@ -80,6 +80,8 @@ const ko = {
   portRoundBefore: '물타기 ', portRoundAfter: '회',
 
   footerAbout: '서비스 소개', footerPrivacy: '개인정보처리방침',
+  footerCalculators: '계산기', footerArticles: '아티클', footerFaq: 'FAQ',
+  footerContact: '문의하기', footerTerms: '이용약관',
   footerDisclaimer: '본 서비스는 투자 참고용 계산 도구이며, 투자 조언을 제공하지 않습니다.\n모든 투자 결정은 본인의 판단과 책임 하에 이루어져야 합니다.',
   footerCopy: '자산인사이트',
 
@@ -380,6 +382,8 @@ const en: typeof ko = {
   portRoundBefore: '', portRoundAfter: ' round(s)',
 
   footerAbout: 'About', footerPrivacy: 'Privacy Policy',
+  footerCalculators: 'Calculators', footerArticles: 'Articles', footerFaq: 'FAQ',
+  footerContact: 'Contact', footerTerms: 'Terms',
   footerDisclaimer: 'This service is a reference tool only and does not provide investment advice.\nAll investment decisions are the sole responsibility of the user.',
   footerCopy: 'Asset Insight',
 

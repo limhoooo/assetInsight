@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: '정기예금/적금 가이드 - 이자 계산·세금·금리 비교 | 자산인사이트',
   description: '정기예금과 정기적금의 이자 계산 방법, 이자소득세 15.4%, 단리·복리 차이, 세금우대·비과세 혜택까지 완벽 정리합니다.',
   keywords: ['정기예금 이자 계산', '정기적금 계산 방법', '이자소득세 15.4', '예금 단리 복리', '세금우대 예금', '비과세 예금 적금'],
-  alternates: { canonical: `${BASE_URL}/savings/guide` },
+  alternates: { canonical: `${BASE_URL}/savings/guide/` },
 };
 
 const jsonLd = {
