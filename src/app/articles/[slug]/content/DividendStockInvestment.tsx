@@ -127,6 +127,54 @@ export default function DividendStockInvestment() {
             금융소득 2,000만원 이하를 유지해 종합소득세 합산을 피하려면, 배우자 계좌 분산 등을 활용하세요.
           </div>
         </div>
+
+        <h3 className="privacy-section-title" style={{ marginTop: '20px' }}>
+          2026년부터 적용되는 배당소득 분리과세 특례
+        </h3>
+        <p className="privacy-text">
+          2025년 세제개편으로 <strong>고배당 상장법인에서 받은 배당소득을 종합과세 대상에서 제외하고
+          분리과세하는 특례</strong>가 신설됐습니다. 시행 기간은{' '}
+          <strong>2026년 1월 1일부터 2028년 12월 31일까지 3년간</strong>입니다.
+        </p>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style={{ textAlign: 'left' }}>구분</th>
+                <th>기존</th>
+                <th>2026~2028</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2,000만원 초과분</td>
+                <td>종합소득 합산</td>
+                <td>요건 충족 시 분리과세 선택</td>
+              </tr>
+              <tr>
+                <td>최고 세율</td>
+                <td>49.5%</td>
+                <td><strong>38.5%</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="tax-success-box" style={{ marginTop: '14px' }}>
+          최고 구간 기준 <strong>11%포인트</strong>가 낮아집니다. 그동안 종합과세 부담 때문에 배당주
+          비중을 늘리기 어려웠던 고소득 투자자에게는 셈법이 달라지는 변화입니다.
+        </div>
+        <div className="guide-warning-box" style={{ marginTop: '14px' }}>
+          적용 대상은 <strong>국내 고배당 상장법인</strong>입니다. 미국주식 등 해외 배당은 해당하지
+          않으므로 기존 규칙이 그대로 적용됩니다. 배당성향·배당 증가율 등 구체적 요건과 대상 법인 범위는
+          시행령에서 정해지며 변경될 수 있으니 투자 전 최신 기준을 확인하세요.
+        </div>
+        <p className="privacy-text" style={{ marginTop: '14px', marginBottom: 0 }}>
+          해외 배당 과세는{' '}
+          <Link href="/articles/us-dividend-tax-guide" className="privacy-link">
+            미국주식 배당소득세 완전 정리
+          </Link>
+          에서 다룹니다.
+        </p>
       </div>
 
       <div className="card">

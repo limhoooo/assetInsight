@@ -108,6 +108,42 @@ const CALCULATORS = [
       { icon: '🧾', title: '부가세 자동 계산', desc: '지방교육세(취득세×10%), 농어촌특별세 포함 총 납부세액 산출' },
     ],
   },
+  {
+    emoji: '📋',
+    name: 'DSR 계산기',
+    href: '/dsr',
+    guideHref: '/articles/dsr-loan-limit-guide',
+    desc: '연소득과 기존 대출을 입력하면 스트레스 DSR 3단계를 반영한 대출 한도를 적용 전후로 비교해 보여줍니다. 은행 계산기와 달리 로그인 없이 마이너스 통장 환산까지 한 번에 계산합니다.',
+    features: [
+      { icon: '📊', title: '스트레스 DSR 반영', desc: '금리 유형과 고정금리 기간을 넣으면 가산비율을 구간별로 적용해 한도를 산출' },
+      { icon: '💳', title: '기존 대출 합산', desc: '기존 상환액과 마이너스 통장 한도를 5년 분할 환산해 여력 계산' },
+      { icon: '🔀', title: '상환방식별 비교', desc: '원리금균등·원금균등 선택에 따른 한도 차이 즉시 확인' },
+    ],
+  },
+  {
+    emoji: '👔',
+    name: '퇴직금·퇴직소득세 계산기',
+    href: '/retirement',
+    guideHref: '/articles/pension-irp-tax-deduction',
+    desc: '급여로 법정 퇴직금을 추정하고, 근속연수공제·환산급여공제·연분연승 5단계 산식을 그대로 적용해 퇴직소득세와 세후 실수령액을 계산합니다.',
+    features: [
+      { icon: '🧮', title: '5단계 산식 그대로', desc: '근속연수공제 → 환산급여 → 환산급여공제 → 환산산출세액 → 연분연승 전 과정 표시' },
+      { icon: '💼', title: '퇴직금 추정', desc: '3개월 평균 월급과 재직일수로 법정 퇴직금 자동 산출' },
+      { icon: '🏦', title: 'IRP 절세 안내', desc: '일시금 수령과 IRP 이체 시 과세 이연 효과 비교' },
+    ],
+  },
+  {
+    emoji: '🎁',
+    name: '증여세 계산기',
+    href: '/gift-tax',
+    guideHref: '/articles/realestate-tax-checklist',
+    desc: '관계별 증여재산공제와 10년 합산 과세를 반영해 납부할 증여세를 계산합니다. 세대생략 할증과 기한 내 신고세액공제 3%까지 자동 적용합니다.',
+    features: [
+      { icon: '👨‍👩‍👧', title: '관계별 공제 자동 적용', desc: '배우자 6억, 성인자녀 5천만원 등 6가지 관계별 공제 한도 반영' },
+      { icon: '📅', title: '10년 합산 과세', desc: '사전 증여액 입력 시 합산 과세와 기납부세액 공제까지 계산' },
+      { icon: '💡', title: '남은 공제 한도 표시', desc: '앞으로 10년간 추가로 쓸 수 있는 공제 잔액 안내' },
+    ],
+  },
 ];
 
 export default function AboutPage() {

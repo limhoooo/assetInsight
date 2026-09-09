@@ -23,6 +23,10 @@ import UsDividendTaxGuide from './content/UsDividendTaxGuide';
 import ParkingAccountCmaGuide from './content/ParkingAccountCmaGuide';
 import IndexEtfInvestingGuide from './content/IndexEtfInvestingGuide';
 import SemiconductorValueChain from './content/SemiconductorValueChain';
+import SavingToFirstHundredMillion from './content/SavingToFirstHundredMillion';
+import RateRiseMortgageImpact from './content/RateRiseMortgageImpact';
+import FxLossStockTax from './content/FxLossStockTax';
+import DomesticStockTaxGuide from './content/DomesticStockTaxGuide';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://assetsinsight.net';
 
@@ -84,6 +88,10 @@ const CONTENT_MAP: Record<string, React.ReactNode> = {
   'parking-account-cma-guide': <ParkingAccountCmaGuide />,
   'index-etf-investing-guide': <IndexEtfInvestingGuide />,
   'semiconductor-value-chain': <SemiconductorValueChain />,
+  'saving-to-first-hundred-million': <SavingToFirstHundredMillion />,
+  'rate-rise-mortgage-impact': <RateRiseMortgageImpact />,
+  'fx-loss-stock-tax': <FxLossStockTax />,
+  'domestic-stock-tax-guide': <DomesticStockTaxGuide />,
 };
 
 export default async function ArticlePage({

@@ -89,7 +89,10 @@ export default function StockTaxGuidePage() {
             <li>납부세액: 50만 × 22% = 11만원</li>
           </ul>
           <p className="privacy-text" style={{ marginBottom: 0 }}>
-            단, <strong>국내주식 손익과는 통산되지 않습니다.</strong> 해외주식끼리만 합산 가능합니다.
+            2020년 양도분부터 <strong>국내주식과 해외주식의 손익 통산도 허용</strong>됩니다. 다만 통산
+            대상은 양도세 과세대상인 국내주식(대주주 보유분·비상장주식 등)에 한하며, 일반 소액주주의
+            국내 상장주식 매매차익은 과세 대상이 아니라 통산할 수 없습니다. 기본공제 250만원도 국내·국외를
+            합산해 한 번만 적용됩니다.
           </p>
         </div>
 

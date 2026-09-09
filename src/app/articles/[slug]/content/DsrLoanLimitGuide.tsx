@@ -122,7 +122,126 @@ export default function DsrLoanLimitGuide() {
       </div>
 
       <div className="card">
-        <h2 className="privacy-section-title">4. 대출 기간이 한도를 바꾼다</h2>
+        <h2 className="privacy-section-title">4. 스트레스 DSR — 실제로 안 내는 이자로 한도를 깎는다</h2>
+        <p className="privacy-text">
+          2025년 7월부터 <strong>스트레스 DSR 3단계</strong>가 전 업권의 가계대출에 적용됩니다. 앞으로
+          금리가 오를 수 있다고 가정하고, 한도를 계산할 때만 약정 금리에{' '}
+          <strong>스트레스 금리 1.5%포인트</strong>를 얹는 제도입니다. 실제로 내는 이자가 늘어나는 것은
+          아니지만 빌릴 수 있는 금액이 줄어듭니다.
+        </p>
+        <div className="info-box">
+          연소득 1억 원인 차주(변동금리)의 한도가 <strong>6억 5,800만 원에서 5억 5,600만 원으로</strong>{' '}
+          약 1억 원 축소됐습니다. 담보나 소득이 그대로여도 제도 하나로 이만큼 달라집니다.
+        </div>
+        <p className="privacy-text">
+          중요한 것은 <strong>금리 유형에 따라 가산폭이 다르다</strong>는 점입니다. 변동금리는 전액
+          붙지만, 고정 기간이 있는 상품은 그 기간이 만기에서 차지하는 비중에 따라 일부만 붙습니다.
+        </p>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style={{ textAlign: 'left' }}>금리 유형</th>
+                <th>고정기간 ÷ 만기</th>
+                <th>가산비율</th>
+                <th>실제 가산폭</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>변동금리</td>
+                <td>해당 없음</td>
+                <td>100%</td>
+                <td>+1.50%p</td>
+              </tr>
+              <tr>
+                <td>혼합형</td>
+                <td>30% 미만</td>
+                <td>80%</td>
+                <td>+1.20%p</td>
+              </tr>
+              <tr>
+                <td>혼합형</td>
+                <td>30~50%</td>
+                <td>60%</td>
+                <td>+0.90%p</td>
+              </tr>
+              <tr>
+                <td>주기형</td>
+                <td>30% 미만</td>
+                <td>40%</td>
+                <td>+0.60%p</td>
+              </tr>
+              <tr>
+                <td>주기형</td>
+                <td>30~50%</td>
+                <td>30%</td>
+                <td>+0.45%p</td>
+              </tr>
+              <tr>
+                <td>고정 비중 70% 이상</td>
+                <td>70% 이상</td>
+                <td>0%</td>
+                <td>없음</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="privacy-text" style={{ marginTop: '14px' }}>
+          연소득 6,000만 원, 금리 4.5%, 30년 원리금균등, DSR 40% 기준으로 금리 유형만 바꿔 보겠습니다.
+        </p>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style={{ textAlign: 'left' }}>금리 유형</th>
+                <th>한도 산정 금리</th>
+                <th>대출 한도</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>순수 고정금리</td>
+                <td>4.50%</td>
+                <td>
+                  <strong>약 3억 9,472만원</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>주기형 (5년 고정)</td>
+                <td>5.10%</td>
+                <td>약 3억 6,835만원</td>
+              </tr>
+              <tr>
+                <td>혼합형 (5년 고정)</td>
+                <td>5.70%</td>
+                <td>약 3억 4,458만원</td>
+              </tr>
+              <tr>
+                <td>변동금리</td>
+                <td>6.00%</td>
+                <td>약 3억 3,358만원</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="tax-success-box" style={{ marginTop: '14px' }}>
+          같은 소득, 같은 약정 금리인데 <strong>금리 유형만 바꿔도 한도가 6,100만 원 넘게</strong>{' '}
+          차이 납니다. 한도가 모자란다면 금리를 깎으려 애쓰기보다 고정금리 비중이 높은 상품을 찾는 쪽이
+          효과가 클 수 있습니다.
+        </div>
+        <p className="privacy-text" style={{ marginTop: '14px', marginBottom: 0 }}>
+          내 조건에서 얼마나 줄어드는지는{' '}
+          <Link href="/dsr" className="privacy-link">
+            DSR 계산기
+          </Link>
+          에서 스트레스 적용 전후를 나란히 확인할 수 있습니다. 지방 주택담보대출은 2026년 상반기까지 한시
+          유예 조치가 적용된 구간이 있으니 대출 시점 기준을 확인하세요.
+        </p>
+      </div>
+
+      <div className="card">
+        <h2 className="privacy-section-title">5. 대출 기간이 한도를 바꾼다</h2>
         <p className="privacy-text">
           DSR은 <strong>연간</strong> 상환액을 봅니다. 같은 금액을 빌려도 기간을 늘리면 1년에 갚는 돈이
           줄어들기 때문에 DSR이 낮아지고 한도가 올라갑니다. 연 소득 6,000만 원, 금리 4.5%, 원리금균등
@@ -164,7 +283,7 @@ export default function DsrLoanLimitGuide() {
       </div>
 
       <div className="card">
-        <h2 className="privacy-section-title">5. 상환 방식도 영향을 준다</h2>
+        <h2 className="privacy-section-title">6. 상환 방식도 영향을 준다</h2>
         <p className="privacy-text">
           원금균등은 초기 상환액이 가장 크기 때문에 DSR 심사에서 불리하게 잡힙니다. 총 이자는 원금균등이
           가장 적지만, 한도를 최대한 확보해야 하는 상황이라면 원리금균등이 유리합니다.
@@ -192,7 +311,7 @@ export default function DsrLoanLimitGuide() {
       </div>
 
       <div className="card">
-        <h2 className="privacy-section-title">6. 대출 종류별 DSR 반영 방식</h2>
+        <h2 className="privacy-section-title">7. 대출 종류별 DSR 반영 방식</h2>
         <div className="table-wrap">
           <table>
             <thead>
@@ -233,7 +352,7 @@ export default function DsrLoanLimitGuide() {
       </div>
 
       <div className="card">
-        <h2 className="privacy-section-title">7. 한도를 늘리는 현실적인 방법</h2>
+        <h2 className="privacy-section-title">8. 한도를 늘리는 현실적인 방법</h2>
         <ul className="privacy-list">
           <li>
             <strong>기존 대출 정리</strong> — 신용대출과 마이너스 통장을 먼저 상환하거나 한도를 줄입니다.
@@ -259,7 +378,7 @@ export default function DsrLoanLimitGuide() {
       </div>
 
       <div className="card">
-        <h2 className="privacy-section-title">8. 신청 전 체크리스트</h2>
+        <h2 className="privacy-section-title">9. 신청 전 체크리스트</h2>
         <div className="tax-success-box">
           <strong>미리 확인하면 좋은 것</strong>
           <br />· 보유한 모든 대출의 잔액과 월 상환액 목록

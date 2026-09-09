@@ -20,15 +20,19 @@ type Entry = {
   changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'];
 };
 
-const CALCULATORS = [
-  'avgdown',
-  'stock-tax',
-  'realestate-tax',
-  'holding-tax',
-  'loan',
-  'compound',
-  'savings',
-  'acquisition-tax',
+/** hasGuide: 별도 /guide 페이지가 있는 계산기만 true */
+const CALCULATORS: { slug: string; hasGuide: boolean }[] = [
+  { slug: 'avgdown', hasGuide: true },
+  { slug: 'stock-tax', hasGuide: true },
+  { slug: 'realestate-tax', hasGuide: true },
+  { slug: 'holding-tax', hasGuide: true },
+  { slug: 'loan', hasGuide: true },
+  { slug: 'compound', hasGuide: true },
+  { slug: 'savings', hasGuide: true },
+  { slug: 'acquisition-tax', hasGuide: true },
+  { slug: 'dsr', hasGuide: false },
+  { slug: 'retirement', hasGuide: false },
+  { slug: 'gift-tax', hasGuide: false },
 ];
 
 const STATIC_ENTRIES: Entry[] = [
@@ -45,19 +49,23 @@ const STATIC_ENTRIES: Entry[] = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const calculatorEntries: MetadataRoute.Sitemap = CALCULATORS.flatMap((slug) => [
+  const calculatorEntries: MetadataRoute.Sitemap = CALCULATORS.flatMap((calc) => [
     {
-      url: url(`/${slug}`),
+      url: url(`/${calc.slug}`),
       lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.95,
     },
-    {
-      url: url(`/${slug}/guide`),
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    },
+    ...(calc.hasGuide
+      ? [
+          {
+            url: url(`/${calc.slug}/guide`),
+            lastModified: now,
+            changeFrequency: 'monthly' as const,
+            priority: 0.85,
+          },
+        ]
+      : []),
   ]);
 
   const articleEntries: MetadataRoute.Sitemap = ARTICLES.map((a) => ({

@@ -85,6 +85,30 @@ const CALCULATORS = [
     href: '/acquisition-tax',
     ready: true,
   },
+  {
+    emoji: '📋',
+    name: 'DSR 계산기',
+    nameEn: 'DSR Limit',
+    desc: '스트레스 DSR 3단계 반영 대출 한도. 기존 대출·마이너스통장 합산 후 적용 전후 비교',
+    href: '/dsr',
+    ready: true,
+  },
+  {
+    emoji: '👔',
+    name: '퇴직금·퇴직소득세 계산기',
+    nameEn: 'Severance Tax',
+    desc: '근속연수공제·환산급여공제·연분연승 5단계 산식으로 세후 퇴직금 계산',
+    href: '/retirement',
+    ready: true,
+  },
+  {
+    emoji: '🎁',
+    name: '증여세 계산기',
+    nameEn: 'Gift Tax',
+    desc: '관계별 증여재산공제·10년 합산 과세·세대생략 할증·신고세액공제 자동 적용',
+    href: '/gift-tax',
+    ready: true,
+  },
 ];
 
 const FINANCE_FLOATS = [

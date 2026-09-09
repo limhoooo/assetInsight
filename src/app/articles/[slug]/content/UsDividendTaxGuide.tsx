@@ -211,7 +211,58 @@ export default function UsDividendTaxGuide() {
       </div>
 
       <div className="card">
-        <h2 className="privacy-section-title">6. ETF는 상장 국가에 따라 다르다</h2>
+        <h2 className="privacy-section-title">6. 2026년부터 달라지는 것 — 배당소득 분리과세 특례</h2>
+        <p className="privacy-text">
+          2025년 세제개편으로 <strong>고배당 상장법인의 배당소득을 종합과세에서 빼고 분리과세하는
+          특례</strong>가 도입됐습니다. <strong>2026년 1월 1일부터 2028년 12월 31일까지 3년간 한시</strong>
+          적용됩니다.
+        </p>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style={{ textAlign: 'left' }}>구분</th>
+                <th>기존</th>
+                <th>2026~2028</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>과세 방식</td>
+                <td>2,000만원 초과분 종합과세</td>
+                <td>요건 충족 시 분리과세 선택</td>
+              </tr>
+              <tr>
+                <td>최고 세율</td>
+                <td>49.5%</td>
+                <td>
+                  <strong>38.5%</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="tax-success-box" style={{ marginTop: '14px' }}>
+          최고 구간 기준 <strong>11%포인트</strong>가 낮아집니다. 금융소득이 큰 고소득 배당 투자자에게는
+          체감이 상당히 큰 변화입니다.
+        </div>
+        <div className="guide-warning-box" style={{ marginTop: '14px' }}>
+          다만 이 특례는 <strong>국내 고배당 상장법인</strong>에 적용되는 제도입니다. 미국주식 배당은
+          해당하지 않으므로, 앞 절에서 설명한 금융소득종합과세 규칙이 그대로 적용됩니다. 국내 배당주와
+          미국 배당주의 세후 수익률을 비교할 때 이 차이를 반드시 감안해야 합니다.
+        </div>
+        <p className="privacy-text" style={{ marginTop: '14px', marginBottom: 0 }}>
+          적용 요건(배당성향·배당 증가율 등)과 대상 법인 범위는 시행령에서 정해지며 변경될 수 있습니다.
+          국내 배당주 쪽 내용은{' '}
+          <Link href="/articles/dividend-stock-investment" className="privacy-link">
+            국내 배당주 투자 가이드
+          </Link>
+          에서 다룹니다.
+        </p>
+      </div>
+
+      <div className="card">
+        <h2 className="privacy-section-title">7. ETF는 상장 국가에 따라 다르다</h2>
         <p className="privacy-text">
           같은 지수를 추종하는 ETF라도 어디에 상장돼 있느냐에 따라 세금 구조가 완전히 달라집니다.
         </p>
@@ -260,7 +311,7 @@ export default function UsDividendTaxGuide() {
       </div>
 
       <div className="card">
-        <h2 className="privacy-section-title">7. 절세 계좌를 활용하는 방법</h2>
+        <h2 className="privacy-section-title">8. 절세 계좌를 활용하는 방법</h2>
         <ul className="privacy-list">
           <li>
             <strong>ISA 계좌</strong> — 계좌 내에서 발생한 손익을 통산한 뒤 200만 원(서민형 400만 원)까지
@@ -283,7 +334,7 @@ export default function UsDividendTaxGuide() {
       </div>
 
       <div className="card">
-        <h2 className="privacy-section-title">8. 배당 투자 전 체크리스트</h2>
+        <h2 className="privacy-section-title">9. 배당 투자 전 체크리스트</h2>
         <div className="tax-success-box">
           <strong>세후 기준으로 다시 계산해 보세요</strong>
           <br />· 공시 배당수익률에 0.85를 곱하면 대략적인 세후 수익률

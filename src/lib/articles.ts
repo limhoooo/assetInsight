@@ -200,6 +200,42 @@ export const ARTICLES: Article[] = [
     keywords: ['반도체 밸류체인', '팹리스', '파운드리', '반도체 장비주', '후공정 OSAT', '첨단 패키징', '반도체 산업 구조', '반도체 투자 지표', '메모리 반도체 사이클'],
     relatedCalc: { label: '물타기 계산기', href: '/avgdown' },
   },
+  {
+    slug: 'saving-to-first-hundred-million',
+    title: '월 100만원씩 모으면 1억까지 몇 년 걸릴까',
+    description: '저축액과 수익률이 1억 도달 시점을 각각 얼마나 앞당기는지 숫자로 비교하고, 첫 1억 구간에서 무엇에 집중해야 하는지 정리했습니다.',
+    category: '투자',
+    publishedAt: '2026-09-09',
+    keywords: ['1억 모으기', '월 100만원 저축', '목돈 모으기 기간', '적립식 복리', '재테크 종잣돈', '저축 계획', '복리 계산', '첫 1억'],
+    relatedCalc: { label: '복리 계산기', href: '/compound' },
+  },
+  {
+    slug: 'rate-rise-mortgage-impact',
+    title: '금리가 1%p 오르면 내 주담대 월 상환액은 얼마나 오를까',
+    description: '3억 30년 주담대를 기준으로 금리별 월 상환액과 총 이자, 변동금리 재산정 시점의 부담 증가, 소득 대비 DSR 변화를 숫자로 정리했습니다.',
+    category: '대출',
+    publishedAt: '2026-09-09',
+    keywords: ['주담대 금리 인상', '월 상환액 계산', '금리 1%p 영향', '변동금리 재산정', '주택담보대출 이자', '금리인하요구권', '대환대출', '주담대 연체'],
+    relatedCalc: { label: '대출 이자 계산기', href: '/loan' },
+  },
+  {
+    slug: 'fx-loss-stock-tax',
+    title: '달러로는 손해인데 양도세가 나온다고? 환율과 해외주식 세금',
+    description: '해외주식 양도세가 원화 환산액 기준인 이유와, 같은 거래도 환율에 따라 세금이 4만원에서 77만원까지 벌어지는 구조를 예시로 설명합니다.',
+    category: '세금',
+    publishedAt: '2026-09-09',
+    keywords: ['해외주식 환율 세금', '환차손 양도세', '미국주식 원화 환산', '결제일 환율', '해외주식 손익통산', '양도세 250만원 공제', '환전 세금'],
+    relatedCalc: { label: '해외주식 양도소득세 계산기', href: '/stock-tax' },
+  },
+  {
+    slug: 'domestic-stock-tax-guide',
+    title: '국내주식 양도세, 나도 내야 하나? 대주주 기준과 증권거래세',
+    description: '국내 상장주식 매매차익이 비과세인 이유, 10억원으로 환원된 대주주 기준, 인상된 증권거래세, 금투세 폐지 이후 현황을 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-09',
+    keywords: ['국내주식 양도세', '대주주 기준 10억', '증권거래세', '금융투자소득세 폐지', '주식 세금', '대주주 판정', '국내주식 비과세'],
+    relatedCalc: { label: '해외주식 양도소득세 계산기', href: '/stock-tax' },
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {
